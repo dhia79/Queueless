@@ -1,7 +1,8 @@
-// Helper Functions and Global Methods
+/**
+ * QueueLess Core Utilities
+ */
 const API_BASE = 'api/';
 
-// Auth checking
 function requireAuth(allowedRole = null) {
     const userJson = localStorage.getItem('user');
     if (!userJson) {
@@ -12,11 +13,12 @@ function requireAuth(allowedRole = null) {
     try {
         const user = JSON.parse(userJson);
         if (allowedRole && user.role !== allowedRole && user.role !== 'admin') {
-            // Automatically correct their path based on their actual role
-            if (user.role === 'business') window.location.href = 'business_dashboard.html';
-            else if (user.role === 'customer') window.location.href = 'user_dashboard.html';
-            else if (user.role === 'admin') window.location.href = 'admin_dashboard.html';
-            else window.location.href = 'index.html';
+            const routes = {
+                'business': 'business_dashboard.html',
+                'customer': 'user_dashboard.html',
+                'admin': 'admin_dashboard.html'
+            };
+            window.location.href = routes[user.role] || 'index.html';
             return;
         }
     } catch (e) {
@@ -38,7 +40,6 @@ async function logout() {
     window.location.href = 'login.html';
 }
 
-// Global API Fetch helper
 async function apiCall(action, method = 'GET', body = null, endpoint = 'auth.php') {
     const options = {
         method,

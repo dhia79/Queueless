@@ -2,6 +2,8 @@
 require_once 'config.php';
 session_start();
 
+header('Content-Type: application/json');
+
 $action = $_GET['action'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $role = $data['role'] ?? 'customer'; 
         
         if (empty($name) || empty($email) || empty($password)) {
-            echo json_encode(['status' => 'error', 'message' => 'All fields are required']);
+            echo json_encode(['status' => 'error', 'message' => 'Missing credentials']);
             exit;
         }
 
@@ -24,19 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (strlen($password) < 6) {
-            echo json_encode(['status' => 'error', 'message' => 'Password must be at least 6 characters']);
+            echo json_encode(['status' => 'error', 'message' => 'Password too short']);
             exit;
         }
         
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-        
         try {
+            $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $pdo->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
             $stmt->execute([$name, $email, $hash, $role]);
-            
-            echo json_encode(['status' => 'success', 'message' => 'Registration successful']);
+            echo json_encode(['status' => 'success', 'message' => 'Account created']);
         } catch (PDOException $e) {
-            echo json_encode(['status' => 'error', 'message' => 'Email already exists or database error.']);
+            echo json_encode(['status' => 'error', 'message' => 'Email already registered']);
         }
     } elseif ($action === 'login') {
         $email = $data['email'] ?? '';
@@ -50,36 +50,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
             echo json_encode([
-                'status' => 'success', 
-                'message' => 'Login successful', 
+                'status' => 'success',
                 'user' => [
                     'id' => $user['id'], 
                     'name' => $user['name'], 
-                    'email' => $user['email'], 
                     'role' => $user['role']
                 ]
             ]);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Invalid email or password']);
+            echo json_encode(['status' => 'error', 'message' => 'Invalid credentials']);
         }
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
      if ($action === 'logout') {
          session_destroy();
-         echo json_encode(['status' => 'success', 'message' => 'Logged out']);
+         echo json_encode(['status' => 'success']);
      } elseif ($action === 'me') {
          if (isset($_SESSION['user_id'])) {
              $stmt = $pdo->prepare("SELECT id, name, email, role FROM users WHERE id = ?");
              $stmt->execute([$_SESSION['user_id']]);
              $user = $stmt->fetch(PDO::FETCH_ASSOC);
-             if($user){
-                echo json_encode(['status' => 'success', 'user' => $user]);
-             } else {
-                echo json_encode(['status' => 'error', 'message' => 'User not found']);
-             }
+             echo $user ? json_encode(['status' => 'success', 'user' => $user]) : json_encode(['status' => 'error']);
          } else {
-             echo json_encode(['status' => 'error', 'message' => 'Not authenticated']);
+             echo json_encode(['status' => 'error']);
          }
      }
 }
-?>

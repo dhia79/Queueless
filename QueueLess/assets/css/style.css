@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
   --secondary: #10b981;
-  --bg-main: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #0f172a;
+  --bg-main: #fafafa;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-main: #020617;
   --text-muted: #64748b;
-  --border: #e2e8f0;
+  --border: rgba(226, 232, 240, 0.8);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.05);
-  --shadow-hover: 0 25px 50px -12px rgba(79, 70, 229, 0.15);
-  --radius: 16px;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 40px 80px -20px rgba(99, 102, 241, 0.15);
+  --radius: 24px;
 }
 
 * {
@@ -26,9 +26,10 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg-main);
   background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
   color: var(--text-main);
   line-height: 1.6;
   min-height: 100vh;
@@ -39,10 +40,14 @@ body {
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  inset: 0;
+  background-image: 
+    radial-gradient(var(--border) 1px, transparent 1px),
+    repeating-linear-gradient(-45deg, transparent, transparent 100px, rgba(226, 232, 240, 0.1) 100px, rgba(226, 232, 240, 0.1) 101px);
+  background-size: 40px 40px, 100% 100%;
   z-index: -1;
   pointer-events: none;
+  opacity: 0.6;
 }
 
 .container {
@@ -186,36 +191,23 @@ p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1.5rem; }
   padding: 1rem 0 5rem;
 }
 
-/* Cards */
+/* Component Architecture */
 .card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-radius: var(--radius);
   padding: 2.5rem;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
-.card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: 0.5s;
-}
-
-.card:hover::after {
-  left: 100%;
-}
-
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 40px 80px -20px rgba(79, 70, 229, 0.12);
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-premium);
   border-color: var(--primary);
 }
 
@@ -321,7 +313,7 @@ p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1.5rem; }
   line-height: 1;
 }
 
-/* Animations - Premium Staggered Entrances */
+/* Animation Suite */
 .fade-up {
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;

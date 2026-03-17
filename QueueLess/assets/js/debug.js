@@ -24,98 +24,99 @@ class DebugConsole {
         style.textContent = `
             #debug-trigger {
                 position: fixed;
-                bottom: 20px;
-                right: 20px;
+                bottom: 24px;
+                right: 24px;
                 z-index: 10000;
-                background: #1e293b;
-                color: #38bdf8;
-                border: 1px solid #38bdf8;
-                padding: 10px 15px;
+                background: #020617;
+                color: #6366f1;
+                border: 1px solid rgba(99, 102, 241, 0.4);
+                padding: 12px 20px;
                 border-radius: 99px;
                 cursor: pointer;
                 font-family: inherit;
                 font-weight: 700;
                 font-size: 13px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                transition: all 0.2s;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
-            #debug-trigger:hover { transform: scale(1.05); background: #0f172a; }
+            #debug-trigger:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); background: #0f172a; }
 
             #debug-panel {
                 position: fixed;
-                bottom: 80px;
-                right: 20px;
-                width: 400px;
-                height: 500px;
-                background: rgba(15, 23, 42, 0.95);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(56, 189, 248, 0.3);
-                border-radius: 16px;
+                bottom: 88px;
+                right: 24px;
+                width: 420px;
+                height: 560px;
+                background: rgba(2, 6, 23, 0.9);
+                backdrop-filter: blur(24px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
                 z-index: 9999;
                 display: none;
                 flex-direction: column;
-                color: #e2e8f0;
-                font-family: 'Consolas', 'Monaco', monospace;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+                color: #f1f5f9;
+                font-family: 'Consolas', monospace;
+                box-shadow: var(--shadow-premium);
                 overflow: hidden;
             }
             #debug-panel.active { display: flex; }
 
             .debug-header {
-                padding: 15px 20px;
-                border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+                padding: 20px 24px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background: rgba(56, 189, 248, 0.05);
             }
             .debug-tabs {
                 display: flex;
                 background: #0f172a;
                 padding: 4px;
-                border-radius: 8px;
+                border-radius: 12px;
             }
             .debug-tab {
-                padding: 6px 12px;
+                padding: 6px 14px;
                 cursor: pointer;
                 font-size: 11px;
-                border-radius: 6px;
+                border-radius: 8px;
                 color: #94a3b8;
+                transition: all 0.2s;
             }
-            .debug-tab.active { background: #38bdf8; color: #0f172a; font-weight: 700; }
+            .debug-tab.active { background: #6366f1; color: white; font-weight: 700; }
 
-            .debug-content { flex: 1; overflow-y: auto; padding: 15px; font-size: 12px; }
+            .debug-content { flex: 1; overflow-y: auto; padding: 20px; font-size: 12px; }
             .debug-footer {
-                padding: 15px;
-                border-top: 1px solid rgba(56, 189, 248, 0.2);
+                padding: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
                 display: flex;
-                gap: 10px;
+                gap: 12px;
             }
             .debug-btn {
-                background: rgba(255,255,255,0.05);
-                border: 1px solid rgba(56, 189, 248, 0.3);
+                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 color: white;
-                padding: 8px 12px;
-                border-radius: 6px;
+                padding: 10px 16px;
+                border-radius: 12px;
                 font-size: 11px;
                 cursor: pointer;
                 flex: 1;
+                transition: all 0.2s;
             }
-            .debug-btn-danger { color: #f87171; border-color: rgba(248, 113, 113, 0.3); }
-            .debug-btn:hover { background: rgba(56, 189, 248, 0.1); }
+            .debug-btn-danger { color: #f87171; border-color: rgba(248, 113, 113, 0.2); }
+            .debug-btn:hover { background: rgba(255, 255, 255, 0.08); }
 
-            .log-item { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 8px 0; }
-            .log-time { color: #64748b; margin-right: 8px; }
-            .log-action { color: #38bdf8; font-weight: 700; }
-            .log-status-success { color: #34d399; }
-            .log-status-error { color: #f87171; }
+            .log-item { border-bottom: 1px solid rgba(255,255,255,0.03); padding: 10px 0; }
+            .log-time { color: #475569; margin-right: 8px; }
+            .log-action { color: #6366f1; font-weight: 700; }
+            .log-status-success { color: #10b981; }
+            .log-status-error { color: #ef4444; }
 
-            .stat-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
-            .stat-label { color: #94a3b8; }
-            .stat-value { color: #38bdf8; font-weight: 700; }
+            .stat-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+            .stat-label { color: #64748b; }
+            .stat-value { color: #6366f1; font-weight: 700; }
         `;
         document.head.appendChild(style);
     }

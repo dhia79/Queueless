@@ -2,11 +2,12 @@
 require_once 'config.php';
 $user_id = checkAuth();
 
+header('Content-Type: application/json');
+
 $action = $_GET['action'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($action === 'businesses') {
-        // List businesses and their active queues
         $stmt = $pdo->query("SELECT b.id, b.name, b.location, b.service_type, 
                              q.id as queue_id, q.service_name, q.avg_service_time 
                              FROM businesses b 
@@ -37,10 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo json_encode(['status' => 'success', 'businesses' => array_values($businesses)]);
         exit;
     } elseif ($action === 'status') {
-        // Get user's current queue status
         $queue_id = $_GET['queue_id'] ?? 0;
         
-        // 1. Get user's entry with business and service details
         $stmt = $pdo->prepare("SELECT e.id, e.position, e.status, e.join_time, b.name as business_name, q.service_name 
                                FROM queue_entries e
                                JOIN queues q ON e.queue_id = q.id
@@ -51,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $entry = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if (!$entry) {
-            echo json_encode(['status' => 'error', 'message' => 'Not in this queue']);
+            echo json_encode(['status' => 'error', 'message' => 'Record not found']);
             exit;
         }
 
@@ -60,25 +59,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             exit;
         }
 
-        // 2. Count people ahead
-        $stmt = $pdo->prepare("SELECT count(*) as count FROM queue_entries WHERE queue_id = ? AND status = 'waiting' AND position < ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM queue_entries WHERE queue_id = ? AND status = 'waiting' AND position < ?");
         $stmt->execute([$queue_id, $entry['position']]);
-        $people_ahead = $stmt->fetch(PDO::FETCH_ASSOC)['count'];
+        $people_ahead = $stmt->fetchColumn();
 
-        // 3. Get avg service time
         $stmt = $pdo->prepare("SELECT avg_service_time FROM queues WHERE id = ?");
         $stmt->execute([$queue_id]);
-        $avg_time = $stmt->fetch(PDO::FETCH_ASSOC)['avg_service_time'];
-
-        // Smart Calculation using the given formula
-        // Assuming 1 service employee for simplicity in this basic version, can be expanded later
-        $estimated_wait_time = $people_ahead * $avg_time;
+        $avg_time = $stmt->fetchColumn();
 
         echo json_encode([
             'status' => 'success', 
             'entry' => $entry, 
-            'people_ahead' => $people_ahead, 
-            'estimated_wait_time' => $estimated_wait_time
+            'people_ahead' => (int)$people_ahead, 
+            'estimated_wait_time' => $people_ahead * $avg_time
         ]);
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -87,30 +80,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($action === 'join') {
         $queue_id = $data['queue_id'] ?? 0;
         
-        // Check if already in queue
         $stmt = $pdo->prepare("SELECT id FROM queue_entries WHERE user_id = ? AND queue_id = ? AND status = 'waiting'");
         $stmt->execute([$user_id, $queue_id]);
         if ($stmt->fetch()) {
-            echo json_encode(['status' => 'error', 'message' => 'Already in this queue']);
+            echo json_encode(['status' => 'error', 'message' => 'Already active in queue']);
             exit;
         }
 
-        // Get max position for this queue
-        $stmt = $pdo->prepare("SELECT MAX(position) as max_pos FROM queue_entries WHERE queue_id = ?");
+        $stmt = $pdo->prepare("SELECT MAX(position) FROM queue_entries WHERE queue_id = ?");
         $stmt->execute([$queue_id]);
-        $res = $stmt->fetch(PDO::FETCH_ASSOC);
-        $next_pos = ($res['max_pos'] ?? 0) + 1;
+        $next_pos = (int)$stmt->fetchColumn() + 1;
 
-        // Join queue
         $stmt = $pdo->prepare("INSERT INTO queue_entries (user_id, queue_id, position, status) VALUES (?, ?, ?, 'waiting')");
         $stmt->execute([$user_id, $queue_id, $next_pos]);
         
-        echo json_encode(['status' => 'success', 'message' => 'Joined queue successfully']);
+        echo json_encode(['status' => 'success']);
     } elseif ($action === 'leave') {
         $queue_id = $data['queue_id'] ?? 0;
         $stmt = $pdo->prepare("UPDATE queue_entries SET status = 'cancelled' WHERE user_id = ? AND queue_id = ? AND status = 'waiting'");
         $stmt->execute([$user_id, $queue_id]);
-        echo json_encode(['status' => 'success', 'message' => 'Left queue']);
+        echo json_encode(['status' => 'success']);
     }
 }
-?>

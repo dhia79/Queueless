@@ -1,42 +1,29 @@
-// Real-time polling logic to simulate WebSockets
+const QueueMonitor = {
+    interval: null,
 
-window.queuePollingInterval = null;
+    start(queueId, callback, intervalMs = 5000) {
+        this.stop();
+        this.sync(queueId, callback);
+        this.interval = setInterval(() => this.sync(queueId, callback), intervalMs);
+    },
 
-/**
- * Starts polling the server for queue status updates.
- * @param {number} queueId - The queue ID to track.
- * @param {function} callback - Function receiving the updated data.
- * @param {number} intervalMs - Polling interval in milliseconds (default: 5000).
- */
-function startQueuePolling(queueId, callback, intervalMs = 5000) {
-    if (window.queuePollingInterval) {
-        clearInterval(window.queuePollingInterval);
+    stop() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+        }
+    },
+
+    async sync(queueId, callback) {
+        try {
+            const data = await apiCall('status&queue_id=' + queueId, 'GET', null, 'user_queue.php');
+            callback(data);
+        } catch (err) {
+            console.error('[Monitor] Sync failed:', err);
+        }
     }
+};
 
-    // Initial fetch immediately
-    fetchStatus(queueId, callback);
+window.startQueuePolling = (id, cb, ms) => QueueMonitor.start(id, cb, ms);
+window.stopQueuePolling = () => QueueMonitor.stop();
 
-    // Setup interval
-    window.queuePollingInterval = setInterval(() => {
-        fetchStatus(queueId, callback);
-    }, intervalMs);
-}
-
-/**
- * Stops any active polling.
- */
-function stopQueuePolling() {
-    if (window.queuePollingInterval) {
-        clearInterval(window.queuePollingInterval);
-        window.queuePollingInterval = null;
-    }
-}
-
-async function fetchStatus(queueId, callback) {
-    try {
-        const res = await apiCall('status&queue_id=' + queueId, 'GET', null, 'user_queue.php');
-        callback(res);
-    } catch (err) {
-        console.error("Polling error: ", err);
-    }
-}
