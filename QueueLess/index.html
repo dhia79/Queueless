@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QueueLess - The Future of Waiting</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.4">
     <style>
         .hero {
             padding: 6rem 0;
@@ -57,7 +57,9 @@
             padding: 4rem 0;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            background: white;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             text-align: center;
         }
 
@@ -187,7 +189,7 @@
                     <p class="text-muted">Don't just take our word for it. Here's what people are saying.</p>
                 </div>
                 <div class="grid grid-3">
-                    <div class="card fade-up delay-1" style="background: var(--bg-main);">
+                    <div class="card fade-up delay-1">
                         <div style="color: #fbbf24; font-size: 1.25rem; margin-bottom: 1rem;">★★★★★</div>
                         <p style="font-style: italic; margin-bottom: 1.5rem;">"QueueLess completely transformed our clinic. Patients wait in their cars or at home instead of crowding our waiting room. It's safe, efficient, and everyone loves it."</p>
                         <div style="display: flex; align-items: center; gap: 1rem;">

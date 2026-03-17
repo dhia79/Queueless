@@ -1,36 +1,28 @@
 <?php
 require_once 'config.php';
 
-// Only admins can access the probe for security
+header('Content-Type: application/json');
+
 try {
     $user_id = checkAuth();
     $stmt = $pdo->prepare("SELECT role FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
-    $role = $stmt->fetchColumn();
-
-    if ($role !== 'admin') {
-        echo json_encode(['status' => 'error', 'message' => 'Admin only']);
-        exit;
-    }
+    if ($stmt->fetchColumn() !== 'admin') exit(json_encode(['status' => 'error']));
 } catch (Exception $e) {
-    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
-    exit;
+    exit(json_encode(['status' => 'error']));
 }
 
-// Gather system info
-$info = [
-    'php_version' => PHP_VERSION,
-    'server_software' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown',
+$diagnostics = [
+    'php' => PHP_VERSION,
+    'server' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown',
     'extensions' => [
         'pdo' => extension_loaded('pdo'),
         'pdo_mysql' => extension_loaded('pdo_mysql'),
-        'session' => extension_loaded('session'),
-        'json' => extension_loaded('json')
+        'session' => extension_loaded('session')
     ],
-    'db_status' => 'Connected',
-    'time_server' => date('Y-m-d H:i:s'),
-    'memory_usage' => round(memory_get_usage() / 1024 / 1024, 2) . ' MB'
+    'db' => 'Connected',
+    'timestamp' => date('Y-m-d H:i:s'),
+    'memory' => round(memory_get_usage() / 1024 / 1024, 2) . ' MB'
 ];
 
-echo json_encode(['status' => 'success', 'diagnostics' => $info]);
-?>
+echo json_encode(['status' => 'success', 'diagnostics' => $diagnostics]);
