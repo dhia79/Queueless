@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - QueueLess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-main); overflow-x: hidden; }
+        .split-layout {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: row-reverse; /* Flip sides for variety */
+        }
+        .split-left {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(16, 185, 129, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4rem;
+            color: white;
+            position: relative;
+        }
+        .split-left::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, var(--bg-main) 0%, transparent 100%);
+            opacity: 0.1;
+        }
+        .split-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg-main);
+        }
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+        }
+        .auth-card {
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            padding: 0;
+        }
+        @media(max-width: 992px) {
+            .split-left { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-layout fade-up">
+        <div class="split-left">
+            <a href="index.html" class="logo" style="color: white; position: relative; z-index: 10;">⏱️ Queue<span style="color: white;">Less</span></a>
+            <div style="position: relative; z-index: 10;">
+                <h1 style="color: white; font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem;">Join the movement.</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 480px;">Whether you're managing a bustling business or just trying to get a table for brunch, QueueLess makes waiting invisible.</p>
+            </div>
+            <div style="position: relative; z-index: 10; font-size: 0.9rem; opacity: 0.7;">
+                &copy; 2026 QueueLess Inc.
+            </div>
+        </div>
+
+        <div class="split-right">
+            <div class="auth-container">
+                <div class="card auth-card">
+                    <h2 class="text-center mb-1">Create an Account</h2>
+                    <p class="text-center text-muted mb-4" id="role-text">Join QueueLess today</p>
+                    
+                    <div id="error-msg" class="alert alert-error hidden"></div>
+                    <div id="success-msg" class="alert alert-success hidden"></div>
+                    
+                    <form id="register-form">
+                        <!-- Hidden input for role -->
+                        <input type="hidden" id="role" value="customer">
+
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input type="password" id="password" class="form-control" required minlength="6" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="btn btn-primary pulse-btn" style="width: 100%; margin-top: 1rem; padding: 0.8rem; font-size: 1rem;">Sign Up</button>
+                    </form>
+                    
+                    <p class="text-center mt-4 text-muted">
+                        Already have an account? <a href="login.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Log in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden audio element for future extensions if needed -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Check URL parameters for role
+        const urlParams = new URLSearchParams(window.location.search);
+        const role = urlParams.get('role');
+        
+        if (role === 'business') {
+            document.getElementById('role').value = 'business';
+            document.getElementById('role-text').textContent = 'Register your business on QueueLess';
+        }
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const errorDiv = document.getElementById('error-msg');
+            const successDiv = document.getElementById('success-msg');
+            
+            btn.textContent = 'Creating account...';
+            btn.disabled = true;
+            errorDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value || (urlParams.get('role') === 'business' ? 'business' : 'customer');
+
+            try {
+                const res = await apiCall('register', 'POST', { name, email, password, role });
+                
+                if (res.status === 'success') {
+                    successDiv.textContent = 'Account created successfully! Redirecting to login...';
+                    successDiv.classList.remove('hidden');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                } else {
+                    errorDiv.textContent = res.message;
+                    errorDiv.classList.remove('hidden');
+                    btn.textContent = 'Sign Up';
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                errorDiv.textContent = 'An error occurred. Please try again.';
+                errorDiv.classList.remove('hidden');
+                btn.textContent = 'Sign Up';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - QueueLess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .queue-status-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #312E81 100%);
+            color: white;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .business-list {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .business-card {
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .business-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        #active-queue-section {
+            transition: all 0.3s ease;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">⏱️ Queue<span>Less</span></a>
+                <div class="nav-links">
+                    <span id="user-name" style="margin-right: 1rem; font-weight: 500;"></span>
+                    <button onclick="logout()" class="btn btn-outline" style="padding: 0.4rem 1rem;">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div style="position: fixed; top: 10%; left: 2%; font-size: 4rem; opacity: 0.03; z-index: -1;" class="float">⏱️</div>
+        <div style="position: fixed; bottom: 10%; right: 2%; font-size: 6rem; opacity: 0.02; z-index: -1;" class="float delay-2">⏳</div>
+
+        <main class="main-content container reveal">
+            <h2 class="mb-4" id="greeting">Join a Queue</h2>
+            
+            <!-- Active Queue Section (Hidden by default) -->
+            <div id="active-queue-section" class="card hidden" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(16, 185, 129, 0.05)); border: 2px solid var(--primary); text-align: center;">
+                <h3 id="aq-business-name" style="margin-bottom: 0.5rem">Business Name</h3>
+                <p id="aq-service-name" style="opacity: 0.8; margin-bottom: 2rem;">Service Name</p>
+                
+                <div class="queue-circle">
+                    <span class="queue-number" id="aq-position" style="color: var(--primary)">--</span>
+                    <span class="queue-label">Position</span>
+                </div>
+                
+                <div class="stat-grid mt-4">
+                    <div class="stat-box">
+                        <div class="stat-value" id="aq-people-ahead">--</div>
+                        <div class="stat-label">People Ahead</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value"><span id="aq-wait-time">--</span> min</div>
+                        <div class="stat-label">Est. Wait</div>
+                    </div>
+                </div>
+
+                <button onclick="leaveQueue()" class="btn btn-danger mt-4" style="background: rgba(239, 68, 68, 0.9); border: 1px solid rgba(255,255,255,0.2);">
+                    Leave Queue
+                </button>
+            </div>
+
+            <!-- Discovery Section -->
+            <div id="discovery-section">
+                <!-- Search Businesses -->
+                <div id="search-section" class="reveal delay-1">
+                <div class="card mb-4" style="background: rgba(255,255,255,0.8); border: 1px solid var(--border);">
+                    <h3>Find a Business</h3>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <input type="text" id="search-input" class="form-control" placeholder="Search by name, category or service...">
+                    </div>
+                    
+                    <div class="filter-container fade-up delay-2">
+                        <div class="filter-pills" id="category-filters">
+                            <div class="filter-pill active" data-category="all">All Services</div>
+                            <div class="filter-pill" data-category="bank">🏦 Banks</div>
+                            <div class="filter-pill" data-category="restaurant">🍔 Restaurants</div>
+                            <div class="filter-pill" data-category="pharmacy">💊 Pharmacies</div>
+                            <div class="filter-pill" data-category="medical">🏥 Medical</div>
+                            <div class="filter-pill" data-category="shop">🛍️ Shops</div>
+                            <div class="filter-pill" data-category="other">✨ Other</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" id="businesses-grid">
+                    <!-- Businesses injected here -->
+                    <p class="text-muted text-center" style="grid-column: 1 / -1; padding: 3rem;">Loading businesses...</p>
+                </div>
+            </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Notification Sound -->
+    <audio id="notifySound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/realtime.js"></script>
+    <script>
+        requireAuth('customer');
+        const user = getAuthUser();
+        // Fallback protection: If somehow a business lands here, redirect them
+        if (user && user.role === 'business') {
+            window.location.href = 'business_dashboard.html';
+        }
+        if (user && user.role === 'admin') {
+            window.location.href = 'admin_dashboard.html';
+        }
+        
+        document.getElementById('user-name').textContent = `Hi, ${user.name}`;
+
+        let currentQueueId = localStorage.getItem('active_queue');
+        let businessesData = [];
+        let currentCategory = 'all';
+
+        function filterAndRender() {
+            const term = document.getElementById('search-input').value.toLowerCase();
+            const filtered = businessesData.filter(b => {
+                const matchesSearch = b.name.toLowerCase().includes(term) || 
+                                     b.service_type.toLowerCase().includes(term) ||
+                                     b.queues.some(q => q.service_name.toLowerCase().includes(term));
+                
+                const matchesCategory = currentCategory === 'all' || 
+                                        b.service_type.toLowerCase().includes(currentCategory);
+                
+                return matchesSearch && matchesCategory;
+            });
+            renderBusinesses(filtered);
+        }
+
+        async function loadBusinesses() {
+            try {
+                const res = await apiCall('businesses', 'GET', null, 'user_queue.php');
+                if (res.status === 'success') {
+                    businessesData = res.businesses;
+                    filterAndRender();
+                }
+            } catch (err) {
+                console.error('Failed to load businesses', err);
+            }
+        }
+
+        function renderBusinesses(businesses) {
+            const container = document.getElementById('businesses-grid');
+            if (businesses.length === 0) {
+                container.innerHTML = '<p class="text-muted text-center" style="grid-column: 1/-1; padding: 2rem;">No open queues found.</p>';
+                return;
+            }
+
+            container.innerHTML = businesses.map(b => `
+                        <div class="card fade-up">
+                            <h3 style="margin-bottom: 0.25rem;">${b.name}</h3>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                <span class="badge" style="background: rgba(79, 70, 229, 0.1); color: var(--primary); border: 1px solid rgba(79, 70, 229, 0.2); text-transform: capitalize; margin: 0;">${b.service_type}</span>
+                                <span class="text-muted" style="font-size: 0.85rem;">📍 ${b.location}</span>
+                            </div>
+                            
+                            <div class="map-container">
+                                <iframe src="https://maps.google.com/maps?q=${encodeURIComponent(b.name + ' ' + b.location)}&output=embed" loading="lazy"></iframe>
+                            </div>
+
+                            <div style="margin-top: 1.5rem;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.75rem;">Available Services:</h4>
+                                ${b.queues.length === 0 ? '<p class="text-muted" style="font-size: 0.9rem;">No active queues.</p>' : ''}
+                                ${b.queues.map(q => `
+                                    <div style="background: var(--bg-main); border: 1px solid var(--border); padding: 1rem; border-radius: 0.75rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'">
+                                        <div>
+                                            <div style="font-weight: 600;">${q.service_name}</div>
+                                            <div class="text-muted" style="font-size: 0.85rem;">Est. ${q.avg_service_time} min / person</div>
+                                        </div>
+                                        <button onclick="joinQueue(${q.id}, '${b.name.replace(/'/g, "\\'")}', '${q.service_name.replace(/'/g, "\\'")}')" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem; background: white; white-space: nowrap;">
+                                            Join Queue
+                                        </button>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+            `).join('');
+        }
+
+        // Search filtering logic
+        document.getElementById('search-input').addEventListener('input', filterAndRender);
+
+        // Category Filter logic
+        document.getElementById('category-filters').addEventListener('click', (e) => {
+            const pill = e.target.closest('.filter-pill');
+            if (!pill) return;
+
+            // Update UI
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            // Update state and re-render
+            currentCategory = pill.dataset.category;
+            filterAndRender();
+        });
+
+        async function joinQueue(queueId, businessName, serviceName) {
+            if (currentQueueId) {
+                alert("You are already in a queue. Please leave your current queue first.");
+                return;
+            }
+
+            try {
+                const res = await apiCall('join', 'POST', { queue_id: queueId }, 'user_queue.php');
+                if (res.status === 'success') {
+                    currentQueueId = queueId;
+                    localStorage.setItem('active_queue', queueId);
+                    
+                    document.getElementById('aq-business-name').textContent = businessName;
+                    document.getElementById('aq-service-name').textContent = serviceName;
+                    
+                    showQueueUI();
+                    startQueuePolling(queueId, updateQueueUI);
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to join queue');
+            }
+        }
+
+        async function leaveQueue() {
+            if (!confirm("Are you sure you want to leave the queue?")) return;
+
+            try {
+                await apiCall('leave', 'POST', { queue_id: currentQueueId }, 'user_queue.php');
+                stopQueuePolling();
+                currentQueueId = null;
+                localStorage.removeItem('active_queue');
+                hideQueueUI();
+            } catch (err) {
+                alert('Error leaving queue');
+            }
+        }
+
+        function showQueueUI() {
+            document.getElementById('active-queue-section').classList.remove('hidden');
+            document.getElementById('discovery-section').style.opacity = '0.5';
+            document.getElementById('discovery-section').style.pointerEvents = 'none';
+        }
+
+        function hideQueueUI() {
+            document.getElementById('active-queue-section').classList.add('hidden');
+            document.getElementById('discovery-section').style.opacity = '1';
+            document.getElementById('discovery-section').style.pointerEvents = 'auto';
+        }
+
+        function updateQueueUI(data) {
+            if (data.status === 'success') {
+                if (data.entry.status === 'served') {
+                    stopQueuePolling();
+                    currentQueueId = null;
+                    localStorage.removeItem('active_queue');
+                    alert("It's your turn! The business has called you.");
+                    hideQueueUI();
+                    return;
+                }
+                
+                if (data.entry.status === 'cancelled') {
+                    stopQueuePolling();
+                    currentQueueId = null;
+                    localStorage.removeItem('active_queue');
+                    alert("Your queue entry was cancelled.");
+                    hideQueueUI();
+                    return;
+                }
+
+                document.getElementById('aq-position').textContent = data.entry.position;
+                document.getElementById('aq-people-ahead').textContent = data.people_ahead;
+                document.getElementById('aq-wait-time').textContent = Math.round(data.estimated_wait_time);
+                
+                // Set names if they are in the response (for refresh consistency)
+                if (data.entry.business_name) {
+                    document.getElementById('aq-business-name').textContent = data.entry.business_name;
+                }
+                if (data.entry.service_name) {
+                    document.getElementById('aq-service-name').textContent = data.entry.service_name;
+                }
+
+                // Play notification if turn is close (e.g., <= 1 person ahead or <= 5 mins)
+                if (data.people_ahead <= 1 && !window.notifiedNearTurn) {
+                    document.getElementById('notifySound').play().catch(e=>console.log("Audio play blocked by browser"));
+                    if (Notification.permission === "granted") {
+                        new Notification("QueueLess", { body: "Your turn is almost up! Please head to the business." });
+                    }
+                    window.notifiedNearTurn = true; // prevent spamming
+                }
+            } else {
+                // Not in queue apparently
+                stopQueuePolling();
+                currentQueueId = null;
+                localStorage.removeItem('active_queue');
+                hideQueueUI();
+            }
+        }
+
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+             // Request notification permission
+            if ("Notification" in window && Notification.permission !== "granted" && Notification.permission !== "denied") {
+                Notification.requestPermission();
+            }
+
+            // Scroll Reveal Logic
+            const observerOptions = { threshold: 0.05 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    el.classList.add('active');
+                }
+            });
+
+            loadBusinesses();
+
+            if (currentQueueId) {
+                // We need to fetch business name ideally, for now just placeholder
+                document.getElementById('aq-business-name').textContent = "Your Active Queue";
+                document.getElementById('aq-service-name').textContent = "Loading status...";
+                showQueueUI();
+                startQueuePolling(currentQueueId, updateQueueUI);
+            }
+        });
+    </script>
+</body>
+</html>

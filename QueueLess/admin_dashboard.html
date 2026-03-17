@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - QueueLess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+        }
+
+        .stat-card .value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            filter: drop-shadow(0 2px 10px rgba(99, 102, 241, 0.4));
+        }
+
+        .stat-card .label {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-btn.active {
+            color: white;
+            background: rgba(99, 102, 241, 0.15);
+            box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.5);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-layout">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">⏱️ Queue<span>Less</span> <span class="badge">ADMIN</span></a>
+                <div class="nav-links">
+                    <span id="user-name" style="margin-right: 1.5rem; font-weight: 500; color: #e2e8f0;"></span>
+                    <button onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1.25rem;">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div style="position: fixed; top: 12%; right: 8%; font-size: 5rem; opacity: 0.03; z-index: -1;" class="float">🛡️</div>
+        <div style="position: fixed; bottom: 15%; left: 8%; font-size: 6rem; opacity: 0.02; z-index: -1;" class="float delay-4">🔑</div>
+
+        <main class="main-content container reveal">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <h2>System Overview</h2>
+                <button onclick="generateMockData(this)" class="btn btn-secondary">
+                    ⚙️ Generate Mock Data
+                </button>
+            </div>
+
+            <div class="grid grid-3 mb-4" id="stats-grid">
+                <!-- Stats injected here -->
+                <p class="text-muted">Loading analytics...</p>
+            </div>
+
+            <div class="card mt-4" style="padding: 0; overflow: hidden;">
+                <div
+                    style="padding: 2rem 2rem 1rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem;">
+                    <div class="tabs" style="border: none; padding: 0; margin: 0;">
+                        <button class="tab-btn active" onclick="switchTab('businesses')">🏢 Businesses</button>
+                        <button class="tab-btn" onclick="switchTab('customers')">👥 Customers</button>
+                    </div>
+                    <button onclick="openUserModal()" class="btn btn-primary"
+                        style="padding: 0.5rem 1rem; font-size: 0.9rem;">+ Add User</button>
+                </div>
+
+                <!-- Businesses Tab -->
+                <div id="tab-businesses" class="tab-content active" style="padding: 0 2rem 2rem; overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name / Email</th>
+                                <th>Business Info</th>
+                                <th>Location</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="businesses-table">
+                            <!-- Table rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Customers Tab -->
+                <div id="tab-customers" class="tab-content" style="padding: 0 2rem 2rem; overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customers-table">
+                            <!-- Table rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- User Modal Add/Edit -->
+    <div id="user-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeUserModal()">&times;</button>
+            <h3 id="modal-title" style="margin-bottom: 1.5rem;">Add New User</h3>
+            <form id="user-form">
+                <input type="hidden" id="user-id">
+                <div class="form-group">
+                    <label class="form-label" for="user-name-input">Full Name</label>
+                    <input type="text" id="user-name-input" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="user-email-input">Email</label>
+                    <input type="email" id="user-email-input" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="user-role-input">Role</label>
+                    <select id="user-role-input" class="form-control" required style="appearance: none;">
+                        <option value="customer">Customer</option>
+                        <option value="business">Business</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="user-password-input">Password <span id="pwd-hint" class="text-muted"
+                            style="font-weight: 400; font-size: 0.8rem;">(Required)</span></label>
+                    <input type="password" id="user-password-input" class="form-control">
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn btn-outline" style="flex: 1;"
+                        onclick="closeUserModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;" id="save-user-btn">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        requireAuth('admin');
+        const user = getAuthUser();
+        // Fallback protection: If somehow a customer/business lands here, redirect them
+        if (user && user.role === 'customer') {
+            window.location.href = 'user_dashboard.html';
+        }
+        if (user && user.role === 'business') {
+            window.location.href = 'business_dashboard.html';
+        }
+
+        document.getElementById('user-name').textContent = `Hi, ${user.name}`;
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`button[onclick="switchTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+        }
+
+        async function loadStats() {
+            try {
+                const res = await apiCall('stats', 'GET', null, 'admin.php');
+                if (res.status === 'success') {
+                    const s = res.stats;
+                    document.getElementById('stats-grid').innerHTML = `
+                        <div class="card stat-card">
+                            <div class="value">${s.total_users}</div>
+                            <div class="label">Total Customers</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="value">${s.total_businesses}</div>
+                            <div class="label">Businesses</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="value">${s.total_served}</div>
+                            <div class="label">People Served</div>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error('Failed to load stats');
+            }
+        }
+
+        async function loadBusinesses() {
+            try {
+                const res = await apiCall('businesses', 'GET', null, 'admin.php');
+                if (res.status === 'success') {
+                    const tbody = document.getElementById('businesses-table');
+                    if (res.businesses.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">No businesses found</td></tr>';
+                        return;
+                    }
+
+                    tbody.innerHTML = res.businesses.map(b => `
+                        <tr>
+                            <td class="text-muted">#${b.user_id}</td>
+                            <td>
+                                <div style="font-weight: 600; color: white;">${b.owner_name}</div>
+                                <div class="text-muted" style="font-size: 0.85rem">${b.email}</div>
+                            </td>
+                            <td>
+                                ${b.business_id ?
+                            `<span style="color: white; font-weight: 500;">${b.business_name}</span><br><span class="text-muted" style="font-size: 0.85rem">${b.service_type}</span>` :
+                            `<span style="color: var(--warning); font-size: 0.85rem;">Profile incomplete</span>`
+                        }
+                            </td>
+                            <td class="text-muted">${b.location || '-'}</td>
+                            <td class="text-muted" style="font-size: 0.9rem;">${new Date(b.created_at).toLocaleDateString()}</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button onclick="openUserModal({id: ${b.user_id}, name: '${b.owner_name.replace(/'/g, "\\'")}', email: '${b.email.replace(/'/g, "\\'")}', role: 'business'})" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
+                                    <button onclick="deleteUser(${b.user_id}, 'business')" class="btn btn-danger" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+            } catch (err) {
+                console.error('Failed to load businesses list');
+            }
+        }
+
+        async function loadCustomers() {
+            try {
+                const res = await apiCall('customers', 'GET', null, 'admin.php');
+                if (res.status === 'success') {
+                    const tbody = document.getElementById('customers-table');
+                    if (res.customers.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-4">No customers found</td></tr>';
+                        return;
+                    }
+
+                    tbody.innerHTML = res.customers.map(c => `
+                        <tr>
+                            <td class="text-muted">#${c.id}</td>
+                            <td style="font-weight: 600; color: white;">${c.name}</td>
+                            <td class="text-muted">${c.email}</td>
+                            <td class="text-muted" style="font-size: 0.9rem;">${new Date(c.created_at).toLocaleDateString()}</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button onclick="openUserModal({id: ${c.id}, name: '${c.name.replace(/'/g, "\\'")}', email: '${c.email.replace(/'/g, "\\'")}', role: 'customer'})" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
+                                    <button onclick="deleteUser(${c.id}, 'customer')" class="btn btn-danger" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+            } catch (err) {
+                console.error('Failed to load customers list');
+            }
+        }
+
+        async function deleteUser(id, type) {
+            const warning = type === 'business'
+                ? "Are you sure you want to completely remove this business? This will delete all their queues and current waitlist."
+                : "Are you sure you want to remove this customer account? This will pull them out of any existing queues.";
+
+            if (!confirm(warning)) return;
+
+            try {
+                const res = await apiCall('delete_user', 'POST', { id }, 'admin.php');
+                if (res.status === 'success') {
+                    loadStats();
+                    if (type === 'business') loadBusinesses();
+                    if (type === 'customer') loadCustomers();
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to delete account');
+            }
+        }
+
+        async function generateMockData(btn) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "Generating...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('api/seed.php');
+                const data = await res.json();
+
+                if (data.status === 'success') {
+                    loadStats();
+                    loadBusinesses();
+                    loadCustomers();
+
+                    // Show a fancy success message
+                    const successToast = document.createElement('div');
+                    successToast.className = 'alert alert-success';
+                    successToast.style.position = 'fixed';
+                    successToast.style.bottom = '2rem';
+                    successToast.style.right = '2rem';
+                    successToast.style.zIndex = '9999';
+                    successToast.innerHTML = '✨ ' + data.message;
+                    document.body.appendChild(successToast);
+                    setTimeout(() => successToast.remove(), 4000);
+
+                } else {
+                    alert(data.message);
+                }
+            } catch (err) {
+                alert('Failed to generate mock data');
+                console.error(err);
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        // Modal Logic
+        function openUserModal(user = null) {
+            const modal = document.getElementById('user-modal');
+            const title = document.getElementById('modal-title');
+            const form = document.getElementById('user-form');
+            const pwdInput = document.getElementById('user-password-input');
+            const pwdHint = document.getElementById('pwd-hint');
+
+            form.reset();
+            document.getElementById('user-id').value = '';
+
+            if (user) {
+                title.textContent = 'Edit User';
+                document.getElementById('user-id').value = user.id;
+                document.getElementById('user-name-input').value = user.name;
+                document.getElementById('user-email-input').value = user.email;
+                document.getElementById('user-role-input').value = user.role;
+
+                pwdInput.required = false;
+                pwdHint.textContent = '(Leave blank to keep current)';
+            } else {
+                title.textContent = 'Add New User';
+                pwdInput.required = true;
+                pwdHint.textContent = '(Required)';
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeUserModal() {
+            document.getElementById('user-modal').classList.add('hidden');
+        }
+
+        document.getElementById('user-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('save-user-btn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+
+            const id = document.getElementById('user-id').value;
+            const data = {
+                id: id,
+                name: document.getElementById('user-name-input').value,
+                email: document.getElementById('user-email-input').value,
+                role: document.getElementById('user-role-input').value,
+                password: document.getElementById('user-password-input').value
+            };
+
+            const action = id ? 'update_user' : 'add_user';
+
+            try {
+                const res = await apiCall(action, 'POST', data, 'admin.php');
+                if (res.status === 'success') {
+                    closeUserModal();
+                    loadStats();
+                    loadBusinesses();
+                    loadCustomers();
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to save user');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Save User';
+            }
+        });
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+             // Scroll Reveal Logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    el.classList.add('active');
+                }
+            });
+
+            loadStats();
+            loadBusinesses();
+            loadCustomers();
+        });
+    </script>
+</body>
+</html>

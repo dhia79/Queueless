@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard - QueueLess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">⏱️ Queue<span>Less</span> <span class="badge"
+                        style="background:var(--primary)">BUSINESS</span></a>
+                <div class="nav-links">
+                    <span id="user-name"
+                        style="margin-right: 1.5rem; font-weight: 600; color: var(--text-muted);"></span>
+                    <button onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1.25rem;">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div style="position: fixed; top: 15%; right: 5%; font-size: 5rem; opacity: 0.03; z-index: -1;" class="float">👔
+        </div>
+        <div style="position: fixed; bottom: 10%; left: 5%; font-size: 4rem; opacity: 0.02; z-index: -1;"
+            class="float delay-4">💼</div>
+
+        <main class="main-content container reveal">
+
+            <div id="setup-section" class="card hidden">
+                <h2>Set Up Your Business Profile</h2>
+                <p class="text-muted mb-4">You need to complete your profile before creating queues.</p>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label class="form-label">Business Name</label>
+                        <input type="text" id="b-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Location / Address</label>
+                        <input type="text" id="b-location" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Business Type (e.g., Pharmacy, Bank)</label>
+                        <input type="text" id="b-type" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Profile</button>
+                </form>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="hidden">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Manage Queues</h2>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: 2rem;">
+                    <div class="card">
+                        <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                            Current Waitlists</h3>
+                        <div id="queues-list">
+                            <p class="text-muted text-center" style="padding: 2rem;">Loading queues...</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background: var(--bg-main); border: 1px dashed var(--border);">
+                        <h3 style="margin-bottom: 1.5rem;">Create New Queue</h3>
+                        <p class="text-muted mb-4">Start managing your customer flow by creating a new queue.</p>
+                        <button onclick="document.getElementById('create-queue-modal').classList.remove('hidden')"
+                            class="btn btn-primary" style="width: 100%;">
+                            + New Queue
+                        </button>
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                            <h4 style="margin-bottom: 1rem;">Premium Features</h4>
+                            <p class="text-muted mb-3">Unlock advanced features like custom branding, analytics, and
+                                priority support with a premium plan.</p>
+                            <button class="btn btn-outline" style="width: 100%;">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create Queue Modal -->
+    <div id="create-queue-modal" class="hidden"
+        style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 50;">
+        <div class="card" style="width: 100%; max-width: 400px;">
+            <h3 class="mb-4">Create New Queue</h3>
+            <form id="queue-form">
+                <div class="form-group">
+                    <label class="form-label">Service Name (e.g., Consultations)</label>
+                    <input type="text" id="q-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Avg. Service Time (minutes)</label>
+                    <input type="number" id="q-time" class="form-control" min="1" required value="10">
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button type="button" class="btn btn-outline"
+                        onclick="document.getElementById('create-queue-modal').classList.add('hidden')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        requireAuth('business');
+        const user = getAuthUser();
+        // Fallback protection: If somehow a customer lands here, redirect them
+        if (user && user.role === 'customer') {
+            window.location.href = 'user_dashboard.html';
+        }
+        if (user && user.role === 'admin') {
+            window.location.href = 'admin_dashboard.html';
+        }
+
+        document.getElementById('user-name').textContent = `Hi, ${user.name}`;
+
+        // Scroll Reveal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.05 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    el.classList.add('active');
+                }
+            });
+        });
+
+        async function init() {
+            try {
+                // Check if profile exists
+                const res = await apiCall('profile', 'GET', null, 'business_queue.php');
+                if (res.status === 'success' && res.business) {
+                    document.getElementById('dashboard-section').classList.remove('hidden');
+                    loadQueues();
+                } else {
+                    document.getElementById('setup-section').classList.remove('hidden');
+                }
+            } catch (err) {
+                console.error("Initialization failed");
+            }
+        }
+
+        // Profile Form Setup
+        document.getElementById('profile-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Saving...';
+            btn.disabled = true;
+
+            const name = document.getElementById('b-name').value;
+            const location = document.getElementById('b-location').value;
+            const service_type = document.getElementById('b-type').value;
+
+            try {
+                const res = await apiCall('create_profile', 'POST', { name, location, service_type }, 'business_queue.php');
+                if (res.status === 'success') {
+                    document.getElementById('setup-section').classList.add('hidden');
+                    document.getElementById('dashboard-section').classList.remove('hidden');
+                    loadQueues();
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to create profile');
+            } finally {
+                btn.textContent = 'Save Profile';
+                btn.disabled = false;
+            }
+        });
+
+        // Load and Render Queues
+        async function loadQueues() {
+            try {
+                const res = await apiCall('queues', 'GET', null, 'business_queue.php');
+                if (res.status === 'success') {
+                    renderQueues(res.queues);
+                }
+            } catch (err) { }
+        }
+
+        function renderQueues(queues) {
+            const container = document.getElementById('queues-list');
+            if (queues.length === 0) {
+                container.innerHTML = '<p class="text-muted text-center" style="padding: 2rem;">You have no active queues. Create one to get started!</p>';
+                return;
+            }
+
+            container.innerHTML = queues.map(q => `
+                <div class="card fade-up" style="border-left: 4px solid var(--primary);">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 2rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">${q.service_name}</h3>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="text-muted" style="font-size: 0.85rem;">⏱️ ${q.avg_service_time} min / pers</span>
+                                <span style="font-size: 1rem; color: var(--border);">|</span>
+                                <span style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">${q.waiting_count} in line</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 0.75rem; border: 1px solid var(--border);">
+                             <span class="text-muted" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">Live Status</span>
+                             <span style="display: flex; align-items: center; gap: 0.4rem; color: #10b981; font-weight: 700; font-size: 0.9rem;">
+                                <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: pulse-glow 2s infinite;"></span>
+                                Active
+                             </span>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2rem; border-radius: 1rem; text-align: center; margin-bottom: 2rem; border: 1px solid var(--border);">
+                        <p class="text-muted mb-2" style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Currently Serving</p>
+                        ${q.next_customer ? `
+                            <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; margin: 1rem 0;">
+                                #${q.next_customer.position}
+                            </div>
+                            <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-main);">${q.next_customer.name}</div>
+                            <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">Waited ${Math.floor((new Date() - new Date(q.next_customer.join_time)) / 60000)} minutes</p>
+                        ` : `
+                            <div style="color: var(--text-muted); padding: 2rem 0; font-style: italic;">Waitlist is empty</div>
+                        `}
+                    </div>
+
+                    <button onclick="callNext(${q.id})" class="btn btn-primary pulse-btn" style="width: 100%; border-radius: 0.75rem; padding: 1rem;" ${!q.next_customer ? 'disabled' : ''}>
+                        Call Next Customer
+                    </button>
+                    
+                    ${q.next_customer ? `
+                        <p class="text-center text-muted" style="font-size: 0.8rem; margin-top: 1rem;">Clicking will notify ${q.next_customer.name} via push.</p>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Create Queue Form
+        document.getElementById('queue-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const service_name = document.getElementById('q-name').value;
+            const avg_service_time = parseInt(document.getElementById('q-time').value);
+
+            try {
+                const res = await apiCall('create_queue', 'POST', { service_name, avg_service_time }, 'business_queue.php');
+                if (res.status === 'success') {
+                    document.getElementById('create-queue-modal').classList.add('hidden');
+                    document.getElementById('queue-form').reset();
+                    loadQueues();
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to create queue');
+            }
+        });
+
+        // Call Next Customer
+        async function callNext(queueId) {
+            try {
+                const res = await apiCall('call_next', 'POST', { queue_id: queueId }, 'business_queue.php');
+                if (res.status === 'success') {
+                    loadQueues(); // reload UI
+                } else {
+                    alert(res.message);
+                }
+            } catch (err) {
+                alert('Failed to call next customer');
+            }
+        }
+
+        // Auto-refresh queues every 10 seconds to keep business UI updated
+        setInterval(() => {
+            if (!document.getElementById('dashboard-section').classList.contains('hidden')) {
+                loadQueues();
+            }
+        }, 10000);
+
+        init();
+    </script>
+</body>
+
+</html>

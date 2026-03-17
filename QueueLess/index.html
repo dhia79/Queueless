@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueLess - The Future of Waiting</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .hero {
+            padding: 6rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-bg-shape {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border);
+        }
+
+        .logos-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: white;
+            text-align: center;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+            opacity: 0.5;
+            filter: grayscale(100%);
+        }
+
+        .logos-grid img {
+            height: 30px;
+        }
+
+        .features {
+            padding: 6rem 0;
+            background: var(--bg-main);
+        }
+        
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">⏱️ Queue<span>Less</span></a>
+                <div class="nav-links" id="nav-actions">
+                    <a href="login.html" class="btn btn-outline" style="margin-right: 0.5rem; padding: 0.6rem 1.5rem;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Get Started</a>
+                </div>
+            </div>
+        </header>
+
+    <div style="position: absolute; top: 15%; left: 5%; font-size: 5rem; opacity: 0.05; z-index: -1;" class="float">⏱️</div>
+    <div style="position: absolute; top: 40%; right: 10%; font-size: 8rem; opacity: 0.03; z-index: -1;" class="float delay-2">⏳</div>
+    <div style="position: absolute; bottom: 20%; left: 8%; font-size: 4rem; opacity: 0.04; z-index: -1;" class="float delay-4">🚀</div>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero container mb-4 reveal">
+                <div class="hero-bg-shape"></div>
+                <div class="grid grid-2">
+                    <div class="fade-up">
+                        <h1>Wait less.<br><span>Live more.</span></h1>
+                        <p>The smartest way to manage customer flow. Join virtual queues for your favorite businesses, restaurants, and clinics from anywhere.</p>
+                        <div class="hero-buttons">
+                            <a href="register.html?role=customer" class="btn btn-primary pulse-btn">Join a Queue</a>
+                            <a href="register.html?role=business" class="btn btn-secondary">For Businesses</a>
+                        </div>
+                    </div>
+                    <div class="fade-up delay-2">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="People relaxing at a cafe" class="hero-image">
+                    </div>
+                </div>
+            </section>
+
+            <section class="container mb-4 reveal">
+                <h2 class="text-center mb-4">Why Businesses Trust Us</h2>
+                <div class="grid grid-3">
+                    <div class="card fade-up delay-1">
+                        <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">⚡</div>
+                        <h3>Instant Setup</h3>
+                        <p>Register and create your first live queue in under 2 minutes. No hardware required.</p>
+                    </div>
+                    <div class="card fade-up delay-2">
+                        <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">📈</div>
+                        <h3>Live Analytics</h3>
+                        <p>Track wait times, peak hours, and customer satisfaction in real-time from your dashboard.</p>
+                    </div>
+                    <div class="card fade-up delay-3">
+                        <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">📱</div>
+                        <h3>Mobile First</h3>
+                        <p>A seamless experience for customers to join and watch their position from any device.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trusted By Section -->
+            <section class="logos-section reveal">
+                <div class="container">
+                    <h4 class="text-muted" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0;">Trusted by forward-thinking businesses</h4>
+                    <div class="logos-grid">
+                        <!-- Using placeholder svgs for logos -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features container reveal">
+                <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+                    <h2 style="font-size: 3rem;">Everything you need to step out of line</h2>
+                    <p>We've built a comprehensive platform that handles the waiting for you, so you can focus on what matters.</p>
+                </div>
+                
+                <div class="grid grid-3">
+                    <div class="card fade-up delay-1">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="feature-img">
+                        <h3>Search & Join</h3>
+                        <p class="text-muted" style="margin-bottom: 0;">Find nearby locations on the interactive map and join their virtual queue instantly from your smartphone.</p>
+                    </div>
+                    <div class="card fade-up delay-2">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wait time dashboard" class="feature-img">
+                        <h3>Monitor Wait Time</h3>
+                        <p class="text-muted" style="margin-bottom: 0;">Our smart algorithm calculates your exact estimated wait time based on real-time business metrics.</p>
+                    </div>
+                    <div class="card fade-up delay-3">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Notification" class="feature-img">
+                        <h3>Get Notified</h3>
+                        <p class="text-muted" style="margin-bottom: 0;">Receive instant alerts when your turn is approaching. Just show up when you're called.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="container reveal" style="padding: 6rem 0; border-top: 1px solid var(--border); margin-top: 4rem;">
+                <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+                    <h2 style="font-size: 2.5rem;">Loved by businesses and customers</h2>
+                    <p class="text-muted">Don't just take our word for it. Here's what people are saying.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card fade-up delay-1" style="background: var(--bg-main);">
+                        <div style="color: #fbbf24; font-size: 1.25rem; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">"QueueLess completely transformed our clinic. Patients wait in their cars or at home instead of crowding our waiting room. It's safe, efficient, and everyone loves it."</p>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah J." style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <strong style="display: block; font-size: 0.9rem;">Dr. Sarah J.</strong>
+                                <span class="text-muted" style="font-size: 0.8rem;">Clinic Director</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card fade-up delay-2" style="background: var(--bg-main);">
+                        <div style="color: #fbbf24; font-size: 1.25rem; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">"As a customer, I hate waiting in lines. With this app, I joined the waitlist for my favorite brunch spot while I was still in bed. Walked right in 40 minutes later!"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael T." style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <strong style="display: block; font-size: 0.9rem;">Michael T.</strong>
+                                <span class="text-muted" style="font-size: 0.8rem;">Frequent Diner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card fade-up delay-3" style="background: var(--bg-main);">
+                        <div style="color: #fbbf24; font-size: 1.25rem; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Implementing the QueueLess system dropped our walk-away rate by 30%. Customers are happier, and my staff isn't stressed out managing a physical line."</p>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily R." style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <strong style="display: block; font-size: 0.9rem;">Emily R.</strong>
+                                <span class="text-muted" style="font-size: 0.8rem;">Retail Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom CTA -->
+            <section class="container fade-up reveal" style="padding: 6rem 0;">
+                <div class="card" style="background: linear-gradient(135deg, var(--primary) 0%, #312E81 100%); text-align: center; padding: 4rem 2rem; border: none;">
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Ready to upgrade your waiting experience?</h2>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Join thousands of businesses and customers who have already eliminated lines from their vocabulary.</p>
+                    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <a href="register.html?role=business" class="btn" style="background: white; color: var(--primary); padding: 0.75rem 2rem; font-weight: 600;">Get Started for Free</a>
+                        <a href="register.html?role=customer" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white; padding: 0.75rem 2rem;">Join as a Customer</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getAuthUser();
+            if (user) {
+                let dashboardUrl = 'user_dashboard.html';
+                if (user.role === 'business') dashboardUrl = 'business_dashboard.html';
+                if (user.role === 'admin') dashboardUrl = 'admin_dashboard.html';
+                
+                document.getElementById('nav-actions').innerHTML = `
+                    <span style="font-weight: 600; margin-right: 1.5rem; color: var(--text-muted);">Hi, ${user.name}</span>
+                    <a href="${dashboardUrl}" class="btn btn-primary">Go to Dashboard</a>
+                `;
+            }
+        });
+    </script>
+    <script>
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.05 }; // Lower threshold for better reliability
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+            // Immediate check if already in viewport
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                el.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
