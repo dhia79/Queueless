@@ -1,0 +1,391 @@
+<<!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QueueLess - Cahier des Charges Officiel</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet">
+        <style>
+            :root {
+                --primary: #6366f1;
+                --text: #1e293b;
+                --muted: #64748b;
+                --border: #e2e8f0;
+                --bg: #ffffff;
+            }
+
+            @media print {
+                .no-print {
+                    display: none !important;
+                }
+
+                body {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+
+                .page-break {
+                    page-break-before: always;
+                }
+
+                .content {
+                    box-shadow: none !important;
+                    border: none !important;
+                    max-width: 100% !important;
+                    margin: 0 !important;
+                }
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #f8fafc;
+                color: var(--text);
+                line-height: 1.6;
+                margin: 0;
+                padding: 40px 20px;
+            }
+
+            .content {
+                background: var(--bg);
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 60px 80px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                color: #0f172a;
+                margin-top: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                border-bottom: 3px solid var(--primary);
+                padding-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: var(--primary);
+                margin-top: 3rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.5rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+
+            p {
+                margin-bottom: 1.25rem;
+            }
+
+            .uml-box {
+                background: #fdfdfd;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 2rem 0;
+                text-align: center;
+            }
+
+            .mermaid {
+                display: flex;
+                justify-content: center;
+            }
+
+            ul,
+            ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+
+            li {
+                margin-bottom: 0.5rem;
+            }
+
+            .toolbar {
+                max-width: 900px;
+                margin: 0 auto 20px;
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+
+            .btn {
+                background: var(--primary);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-weight: 600;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: opacity 0.2s;
+            }
+
+            .btn:hover {
+                opacity: 0.9;
+            }
+
+            .btn-secondary {
+                background: #64748b;
+            }
+
+            hr {
+                border: 0;
+                border-top: 1px solid var(--border);
+                margin: 3rem 0;
+            }
+
+            .badge {
+                background: #f1f5f9;
+                color: #475569;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+        </style>
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'neutral',
+                securityLevel: 'loose'
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div class="toolbar no-print">
+            <button onclick="window.print()" class="btn">📄 Télécharger / Imprimer en PDF</button>
+            <a href="cahier_de_charge.md" class="btn btn-secondary">Source Markdown</a>
+        </div>
+
+        <article class="content">
+            <header style="text-align: center; margin-bottom: 4rem;">
+                <div
+                    style="font-weight: 800; color: var(--primary); font-size: 1.2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
+                    Dossier Technique</div>
+                <h1>📕 Cahier des Charges - QueueLess</h1>
+                <p style="color: var(--muted);">Plateforme de Gestion Intelligente des Files d'Attente — v2.0 Premium
+                </p>
+            </header>
+
+            <section id="sommaire">
+                <h2>📑 Sommaire</h2>
+                <ol>
+                    <li>Présentation du Projet</li>
+                    <li>Analyse des Acteurs</li>
+                    <li>Spécifications Fonctionnelles</li>
+                    <li>Spécifications Techniques</li>
+                    <li>Méthodologie de Développement</li>
+                    <li>Modélisation UML (Corrigée & 100% Précise)</li>
+                    <li>Design & Expérience Utilisateur (UX)</li>
+                    <li>Conclusion</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>🏗️ 1. Présentation du Projet</h2>
+                <h3>1.1 Vision du Produit</h3>
+                <p><strong>QueueLess</strong> est une solution SaaS de gestion intelligente des files d'attente. Dans un
+                    monde où le temps est la ressource la plus précieuse, QueueLess élimine les files d'attente
+                    physiques en
+                    proposant une expérience digitale fluide, transparente et premium.</p>
+
+                <h3>1.2 Valeur Ajoutée</h3>
+                <ul>
+                    <li><strong>Pour les Entreprises</strong>: Optimisation des flux, réduction de l'encombrement et
+                        amélioration de la satisfaction client.</li>
+                    <li><strong>Pour les Clients</strong>: Liberté de mouvement, gestion du temps optimisée et
+                        notifications
+                        en temps réel.</li>
+                </ul>
+            </section>
+
+            <section class="page-break">
+                <h2>👥 2. Analyse des Acteurs</h2>
+                <p>Le système repose sur une hiérarchie de trois rôles distincts :</p>
+
+                <h3>A. Le Client</h3>
+                <p>Utilisateur final cherchant à optimiser son temps d'attente. Il peut rechercher des services,
+                    s'inscrire
+                    en un clic et suivre sa progression sur une carte interactive.</p>
+
+                <h3>B. Le Partenaire Business</h3>
+                <p>Propriétaire d'établissement gérant les flux. Il dispose d'un tableau de bord pour appeler les
+                    clients,
+                    surveiller les statistiques et configurer ses services.</p>
+
+                <h3>C. L'Administrateur</h3>
+                <p>Garant du système. Il gère les comptes utilisateurs, audite les activités et assure la maintenance de
+                    la
+                    base de données.</p>
+            </section>
+
+            <section class="page-break">
+                <h2>📊 6. Modélisation UML </h2>
+                <p>Cette section présente les diagrammes structurels et comportementaux du système selon les standards
+                    UML
+                    2.5.</p>
+
+                <h3>A. Diagramme de Cas d'Utilisation (Use Case)</h3>
+                <div class="uml-box">
+                    <pre class="mermaid">
+graph LR
+    subgraph Acteurs
+        C[Client]
+        B[Partenaire Business]
+        A[Administrateur]
+    end
+
+    subgraph "Système QueueLess"
+        UC1(S'authentifier)
+        UC2(Rechercher un service)
+        UC3(Visualiser sur la carte)
+        UC4(Rejoindre une file)
+        UC5(Gérer ses files)
+        UC6(Appeler le client suivant)
+        UC7(Gérer les utilisateurs)
+        UC8(Simuler des données)
+
+        UC2 -.->|inclut| UC3
+    end
+
+    C --- UC1
+    C --- UC2
+    C --- UC4
+    C --- UC5
+
+    B --- UC1
+    B --- UC5
+    B --- UC6
+
+    A --- UC1
+    A --- UC7
+    A --- UC8
+                </pre>
+                </div>
+
+                <div class="page-break"></div>
+
+                <h3>B. Diagramme de Classes</h3>
+                <div class="uml-box">
+                    <pre class="mermaid">
+classDiagram
+    direction LR
+    class User {
+        +int id
+        +string name
+        +string email
+        +string role
+        +timestamp created_at
+        +login() void
+        +register() bool
+    }
+    class Business {
+        +int id
+        +int user_id
+        +string name
+        +string location
+        +string service_type
+        +getStats() json
+    }
+    class Queue {
+        +int id
+        +int business_id
+        +string service_name
+        +int avg_service_time
+        +bool is_active
+        +callNext() void
+    }
+    class QueueEntry {
+        +int id
+        +int user_id
+        +int queue_id
+        +int position
+        +enum status
+        +timestamp join_time
+        +join() bool
+        +serve() bool
+    }
+
+    User "1" -- "0..1" Business : possède >
+    User "1" -- "0..*" QueueEntry : participe >
+    Business "1" -- "1..*" Queue : propose >
+    Queue "1" -- "0..*" QueueEntry : contient >
+                </pre>
+                </div>
+
+                <div class="page-break"></div>
+
+                <h3>C. Diagramme de Séquence (Inscription en File)</h3>
+                <div class="uml-box">
+                    <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant JS as Interface 
+    participant PHP as API 
+    participant DB as Base de Données 
+
+    C->>JS: Clic sur Rejoindre la file
+    JS->>PHP: POST user_queue.php action=join
+    activate PHP
+    PHP->>DB: Vérifier session active
+    DB-->>PHP: Session valide
+    PHP->>DB: INSERT INTO queue_entries
+    DB-->>PHP: Succès
+    PHP-->>JS: HTTP 200 statut=success
+    deactivate PHP
+    JS->>C: Notification Position 13
+                </pre>
+                </div>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>🎨 7. Design & Expérience Utilisateur</h2>
+                <p>L'esthétique de <strong>QueueLess</strong> a été travaillée comme un produit de luxe technologique :
+                </p>
+                <ul>
+                    <li><strong>Dégradés de Maillage</strong> : Fond dynamique et apaisant qui élimine les zones vides.
+                    </li>
+                    <li><strong>Glassmorphisme</strong> : Effets de transparence avancés pour les cartes et les
+                        panneaux.</li>
+                    <li><strong>Micro-animations</strong> : Transitions fluides gérées via l'Intersection Observer.</li>
+                    <li><strong>Conception Responsive</strong> : Adaptabilité totale sur mobile, tablette et bureau.
+                    </li>
+                </ul>
+            </section>
+
+            <footer
+                style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.9rem;">
+                Document généré officiellement pour le projet QueueLess Académique. <br>
+                &copy; 2026 - QueueLess Smart Platform.
+            </footer>
+        </article>
+
+    </body>
+
+    </html>>
