@@ -22,8 +22,25 @@ public class UserQueueService extends BaseService {
     @Override
     public String getServiceName() { return "UserQueueService"; }
 
-    public List<Business> listBusinesses() {
-        return businessRepository.findAll();
+    public List<java.util.Map<String, Object>> listBusinesses() {
+        return businessRepository.findAll().stream().map(b -> {
+            java.util.Map<String, Object> map = new java.util.HashMap<>();
+            map.put("id", b.getId());
+            map.put("name", b.getName());
+            map.put("location", b.getLocation());
+            map.put("service_type", b.getServiceType());
+            
+            List<java.util.Map<String, Object>> queues = queueRepository.findByBusiness(b).stream().map(q -> {
+                java.util.Map<String, Object> qMap = new java.util.HashMap<>();
+                qMap.put("id", q.getId());
+                qMap.put("service_name", q.getServiceName());
+                qMap.put("avg_service_time", q.getAvgServiceTime());
+                return qMap;
+            }).toList();
+            
+            map.put("queues", queues);
+            return map;
+        }).toList();
     }
 
     public List<Queue> listActiveQueues() {

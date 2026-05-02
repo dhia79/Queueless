@@ -22,4 +22,5 @@ queueless\service\AdminService.class
 queueless\model\EntryStatus.class
 queueless\service\BaseService.class
 queueless\util\DataSeeder.class
+queueless\util\LoggerRedirect.class
 queueless\repository\QueueEntryRepository.class

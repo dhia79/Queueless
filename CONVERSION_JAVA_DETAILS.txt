@@ -1,0 +1,37 @@
+
+
+## 1. Programmation Orientée Objet en Java
+- **Classes & Objets** : Chaque entité du domaine (Utilisateur, Business, File d'attente) est représentée par une classe spécifique.
+- **Encapsulation** : Toutes les propriétés des entités sont déclarées `private`. L'accès aux données se fait exclusivement via des **Getters** et **Setters** publics pour garantir l'intégrité des données.
+
+## 2. Héritage et Polymorphisme
+- **Héritage** : Une classe de base `BaseEntity` (abstraite) contient les propriétés communes (`id`, `createdAt`). Les classes `User`, `Business`, `Queue` et `QueueEntry` en héritent pour éviter la duplication de code.
+- **Polymorphisme** : Utilisation de méthodes abstraites (ex: `display()`) dans `BaseEntity` redéfinies dans chaque sous-classe pour un comportement spécifique à chaque type d'objet.
+
+## 3. Classes Abstraites et Interfaces
+- **Classe Abstraite** : `BaseEntity` et `BaseService` servent de modèles rigides pour les entités et les services, imposant une structure commune.
+- **Interfaces et Généricité** : L'interface `Repository<T>` définit le contrat pour l'accès aux données (CRUD) en utilisant des types génériques, permettant une abstraction totale du stockage.
+
+## 4. Enums (Énumérations)
+Les énumérations `Role` (admin, business, customer) et `EntryStatus` (waiting, served, cancelled) remplacent les "magic strings" de PHP, assurant une sécurité de type au moment de la compilation.
+
+## 5. Gestion des Exceptions
+Une hiérarchie d'exceptions personnalisées a été créée :
+- `QueuelessException` (classe mère)
+- `AuthException` (erreurs de login/sécurité)
+- `NotFoundException` (ressources manquantes)
+- `DuplicateEntryException` (conflits d'emails)
+
+## 6. Les Collections
+Utilisation intensive de l'API **Collections** (notamment `java.util.List` et `java.util.ArrayList`) pour gérer dynamiquement les listes de commerces, les files d'attente et les utilisateurs, remplaçant les tableaux associatifs PHP.
+
+## 7. Accès aux Données (JDBC & Repository)
+- **Modèle Repository** : Encapsulation de la logique SQL/JPA derrière des dépôts (`UserRepository`, `BusinessRepository`).
+- **JDBC / JPA** : Utilisation de JDBC pour la connexion initiale à MySQL, puis migration vers **Spring Data JPA** pour automatiser le mapping objet-relationnel (ORM) tout en respectant les principes de la couche Repository.
+
+---
+**Structure de fichiers clés :**
+- `queueless.model` : Contient les classes (POO, Getters, Setters, Enums).
+- `queueless.repository` : Interfaces et logique d'accès à la DB.
+- `queueless.service` : Logique métier (AuthService, BusinessService).
+- `queueless.exception` : Gestion personnalisée des erreurs.

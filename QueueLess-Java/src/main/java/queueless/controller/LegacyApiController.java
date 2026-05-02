@@ -52,7 +52,14 @@ public class LegacyApiController {
                     session.setAttribute("user", user);
                     return ResponseEntity.ok(Map.of("status", "success", "user", userMap(user)));
                 case "register":
-                    User newUser = authService.register(body.get("name"), body.get("email"), body.get("password"), Role.valueOf(body.get("role").toUpperCase()));
+                    String roleStr = body.get("role") != null ? body.get("role").toLowerCase() : "customer";
+                    Role role;
+                    try {
+                        role = Role.valueOf(roleStr);
+                    } catch (Exception e) {
+                        role = Role.customer; // Default to customer if unknown
+                    }
+                    User newUser = authService.register(body.get("name"), body.get("email"), body.get("password"), role);
                     session.setAttribute("user", newUser);
                     return ResponseEntity.ok(Map.of("status", "success", "user", userMap(newUser)));
                 case "logout":
@@ -82,18 +89,24 @@ public class LegacyApiController {
 
     // ── user_queue.php ────────────────────────────────────────────────────
     @RequestMapping(value = "/user_queue.php", method = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseEntity<?> handleUserQueue(@RequestParam(name = "action") String action, @RequestParam(name = "queueId", required = false) Integer queueId, HttpSession session) {
+    public ResponseEntity<?> handleUserQueue(@RequestParam(name = "action") String action, @RequestBody(required = false) Map<String, Object> body, @RequestParam(name = "queueId", required = false) Integer queryQueueId, HttpSession session) {
         User user = (User) session.getAttribute("user");
         if (user == null) return ResponseEntity.status(401).build();
 
         try {
             switch (action) {
+                case "businesses":
                 case "list_businesses":
-                    return ResponseEntity.ok(userQueueService.listBusinesses());
+                    return ResponseEntity.ok(Map.of("status", "success", "businesses", userQueueService.listBusinesses()));
                 case "list_queues":
-                    return ResponseEntity.ok(userQueueService.listActiveQueues());
+                    return ResponseEntity.ok(Map.of("status", "success", "queues", userQueueService.listActiveQueues()));
                 case "join":
-                    return ResponseEntity.ok(userQueueService.joinQueue(user, queueId));
+                    Integer qId = queryQueueId;
+                    if (qId == null && body != null && body.containsKey("queue_id")) {
+                        qId = Integer.parseInt(body.get("queue_id").toString());
+                    }
+                    if (qId == null) throw new QueuelessException("Queue ID manquant");
+                    return ResponseEntity.ok(Map.of("status", "success", "entry", userQueueService.joinQueue(user, qId)));
                 default:
                     return ResponseEntity.badRequest().body("Action inconnue");
             }
@@ -139,11 +152,26 @@ public class LegacyApiController {
 
         switch (action) {
             case "stats":
-                return ResponseEntity.ok(adminService.getStats());
+                return ResponseEntity.ok(Map.of("status", "success", "stats", adminService.getStats()));
             case "list_users":
-                return ResponseEntity.ok(adminService.listAllUsers());
+                return ResponseEntity.ok(Map.of("status", "success", "users", adminService.listAllUsers()));
+            case "businesses":
+                return ResponseEntity.ok(Map.of("status", "success", "businesses", adminService.listAllBusinesses()));
+            case "customers":
+                return ResponseEntity.ok(Map.of("status", "success", "customers", adminService.listAllCustomers()));
             default:
                 return ResponseEntity.badRequest().body("Action inconnue");
         }
+    }
+
+    // ── seed.php ──────────────────────────────────────────────────────────
+    @RequestMapping(value = "/seed.php", method = {RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<?> handleSeed(HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        // For testing accessibility, we allow manual seed if admin or if no user exists
+        if (user != null && user.getRole() != Role.ADMIN) return ResponseEntity.status(403).build();
+        
+        adminService.triggerManualSeed();
+        return ResponseEntity.ok(Map.of("status", "success", "message", "Database seeded successfully"));
     }
 }
