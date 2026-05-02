@@ -788,3 +788,15 @@ LegacyApiController PostConstruct: authService = queueless.service.AuthService@3
 2026-05-02T01:14:31.488+01:00  INFO 12848 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 14.498 seconds (process running for 15.748)
 Hibernate: select count(*) from businesses b1_0
 [DataSeeder] Data already exists, skipping...
+2026-05-02T01:15:02.915+01:00  INFO 12848 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-02T01:15:02.917+01:00  INFO 12848 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-02T01:15:02.924+01:00  INFO 12848 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+Processing Auth Action: logout | Body: null
+Processing Auth Action: login | Body: {email=user@test.com, password=user}
+[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Processing Auth Action: logout | Body: null
+Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
+[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(*) from users u1_0
