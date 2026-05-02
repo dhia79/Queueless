@@ -1,0 +1,21 @@
+# QueueLess Java - How to Run
+
+Follow these steps to run the migrated QueueLess Web Application:
+
+1.  **Stop Previous Processes**: Ensure no other Java processes are running in your terminal.
+2.  **Database**: Ensure MySQL is running on port 3306 with a database named `queueless_db`.
+3.  **Run the Web Server**: Open a terminal in the project root and run:
+    ```bash
+    mvn spring-boot:run
+    ```
+    *Note: Do NOT use 'mvn exec:java -Dexec.mainClass=queueless.Main'. That was for the console demo. 'mvn spring-boot:run' is for the website.*
+
+4.  **Access the Website**: Open your browser and go to:
+    http://localhost:8081
+
+5.  **Accounts**: 
+    - You can create a new account on the Register page.
+    - If you encounter a "500 Error", please check the terminal where you ran the command for detailed logs.
+
+Backend is running on Port 8081.
+Frontend is served at the root (/).
