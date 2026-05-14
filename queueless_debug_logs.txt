@@ -140,3 +140,80 @@ Hibernate: select count(*) from businesses b1_0
 2026-05-14T18:14:37.343+01:00  INFO 18924 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-05-14T18:14:37.343+01:00  INFO 18924 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-05-14T18:14:37.345+01:00  INFO 18924 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+=== QUEUELESS STARTUP 2026-05-14T18:19:04.351918800 ===
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-05-14T18:19:05.090+01:00  INFO 15692 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 15692 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in C:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
+2026-05-14T18:19:05.093+01:00  INFO 15692 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T18:19:05.958+01:00  INFO 15692 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T18:19:06.043+01:00  INFO 15692 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2026-05-14T18:19:06.750+01:00  INFO 15692 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-14T18:19:06.767+01:00  INFO 15692 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T18:19:06.767+01:00  INFO 15692 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-14T18:19:06.853+01:00  INFO 15692 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-14T18:19:06.853+01:00  INFO 15692 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1709 ms
+2026-05-14T18:19:07.043+01:00  INFO 15692 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T18:19:07.144+01:00  INFO 15692 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-14T18:19:07.193+01:00  INFO 15692 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T18:19:07.549+01:00  INFO 15692 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T18:19:07.589+01:00  INFO 15692 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T18:19:07.793+01:00  INFO 15692 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7282af25
+2026-05-14T18:19:07.800+01:00  INFO 15692 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T18:19:07.870+01:00  WARN 15692 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-14T18:19:09.358+01:00  INFO 15692 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T18:19:09.466+01:00  INFO 15692 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+LegacyApiController PostConstruct: authService = queueless.service.AuthService@7267006e
+2026-05-14T18:19:09.990+01:00  INFO 15692 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-05-14T18:19:10.377+01:00  INFO 15692 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-05-14T18:19:10.389+01:00  INFO 15692 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 5.769 seconds (process running for 6.246)
+Hibernate: select count(*) from businesses b1_0
+[DataSeeder] Data already exists, skipping...
+2026-05-14T18:19:37.204+01:00  INFO 15692 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T18:19:37.204+01:00  INFO 15692 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T18:19:37.204+01:00  INFO 15692 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+Processing Auth Action: register | Body: {name=majdmokchaha, email=majdmokchaha@mail.com, password=123456789, role=customer}
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
+Processing Auth Action: login | Body: {email=majdmokchaha@mail.com, password=123456789}
+[EMERGENCY DEBUG] AuthService.login for: [majdmokchaha@mail.com]
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Processing Auth Action: logout | Body: null
+Processing Auth Action: login | Body: {email=business@test.com, password=business}
+[EMERGENCY DEBUG] AuthService.login for: [business@test.com]
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
+Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
+Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=? and qe1_0.user_id=? and qe1_0.status=?
