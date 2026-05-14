@@ -1,4 +1,4 @@
-=== QUEUELESS STARTUP 2026-05-02T00:44:01.911332400 ===
+=== QUEUELESS STARTUP 2026-05-14T17:27:06.327467 ===
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -8,678 +8,32 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2026-05-02T00:44:04.059+01:00  INFO 24296 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 24296 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T00:44:04.068+01:00  INFO 24296 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T00:44:06.009+01:00  INFO 24296 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T00:44:06.186+01:00  INFO 24296 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156 ms. Found 4 JPA repository interfaces.
-2026-05-02T00:44:07.895+01:00  INFO 24296 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T00:44:07.935+01:00  INFO 24296 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T00:44:07.935+01:00  INFO 24296 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T00:44:08.213+01:00  INFO 24296 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T00:44:08.213+01:00  INFO 24296 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4024 ms
-2026-05-02T00:44:08.754+01:00  INFO 24296 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T00:44:08.998+01:00  INFO 24296 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T00:44:09.103+01:00  INFO 24296 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T00:44:10.982+01:00  INFO 24296 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T00:44:13.003+01:00  INFO 24296 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T00:44:16.303+01:00  INFO 24296 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f6b7426
-2026-05-02T00:44:16.313+01:00  INFO 24296 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T00:44:16.697+01:00  WARN 24296 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T00:44:24.714+01:00  INFO 24296 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T00:44:25.357+01:00  INFO 24296 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@5d9d8ecf
-2026-05-02T00:44:27.795+01:00  INFO 24296 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T00:44:29.641+01:00  WARN 24296 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-05-02T00:44:29.643+01:00  INFO 24296 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-02T00:44:29.657+01:00  INFO 24296 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-05-02T00:44:29.701+01:00  INFO 24296 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-05-02T00:44:29.745+01:00  INFO 24296 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-05-02T00:44:29.818+01:00 ERROR 24296 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8081 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
-
-=== QUEUELESS STARTUP 2026-05-02T00:50:57.076614 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T00:50:59.285+01:00  INFO 18660 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 18660 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T00:50:59.298+01:00  INFO 18660 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T00:51:01.430+01:00  INFO 18660 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T00:51:01.643+01:00  INFO 18660 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 4 JPA repository interfaces.
-2026-05-02T00:51:03.327+01:00  INFO 18660 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T00:51:03.373+01:00  INFO 18660 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T00:51:03.373+01:00  INFO 18660 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T00:51:03.574+01:00  INFO 18660 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T00:51:03.575+01:00  INFO 18660 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4078 ms
-2026-05-02T00:51:04.045+01:00  INFO 18660 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T00:51:04.300+01:00  INFO 18660 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T00:51:04.413+01:00  INFO 18660 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T00:51:05.291+01:00  INFO 18660 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T00:51:05.411+01:00  INFO 18660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T00:51:06.058+01:00  INFO 18660 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37d699a1
-2026-05-02T00:51:06.067+01:00  INFO 18660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T00:51:06.272+01:00  WARN 18660 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T00:51:09.891+01:00  INFO 18660 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T00:51:10.204+01:00  INFO 18660 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@7a17ffee
-2026-05-02T00:51:11.951+01:00  INFO 18660 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T00:51:13.015+01:00  INFO 18660 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T00:51:13.035+01:00  INFO 18660 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 15.186 seconds (process running for 16.531)
-2026-05-02T00:52:10.432+01:00  INFO 18660 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T00:52:10.445+01:00  INFO 18660 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T00:52:10.449+01:00  INFO 18660 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-Processing Auth Action: login | Body: {email=finavl@test.com, password=finavl@test.com}
-[EMERGENCY DEBUG] AuthService.login for: [finavl@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant queueless.model.Role.customer
-	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
-	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
-	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
-	at jdk.proxy2/jdk.proxy2.$Proxy114.findByEmail(Unknown Source)
-	at queueless.service.AuthService.login(AuthService.java:50)
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.lang.IllegalArgumentException: No enum constant queueless.model.Role.customer
-	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:239)
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:107)
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:33)
-	at org.hibernate.dialect.MySQLEnumJdbcType$2.doExtract(MySQLEnumJdbcType.java:76)
-	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44)
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302)
-	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119)
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52)
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59)
-	at org.hibernate.sql.results.graph.DomainResultAssembler.assemble(DomainResultAssembler.java:33)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.extractConcreteTypeStateValues(AbstractEntityInitializer.java:1081)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntityInstance(AbstractEntityInitializer.java:838)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntity(AbstractEntityInitializer.java:813)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeInstance(AbstractEntityInitializer.java:799)
-	at org.hibernate.sql.results.internal.InitializersList.initializeInstance(InitializersList.java:70)
-	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:109)
-	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86)
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:203)
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303)
-	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509)
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:564)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	... 57 more
-2026-05-02T00:52:11.222+01:00 ERROR 18660 --- [nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant queueless.model.Role.customer] with root cause
-
-java.lang.IllegalArgumentException: No enum constant queueless.model.Role.customer
-	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[na:na]
-	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:239) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:107) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.dialect.MySQLEnumJdbcType$2.doExtract(MySQLEnumJdbcType.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.DomainResultAssembler.assemble(DomainResultAssembler.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.extractConcreteTypeStateValues(AbstractEntityInitializer.java:1081) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntityInstance(AbstractEntityInitializer.java:838) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntity(AbstractEntityInitializer.java:813) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeInstance(AbstractEntityInitializer.java:799) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.InitializersList.initializeInstance(InitializersList.java:70) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:109) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:203) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:564) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
-	at jdk.proxy2/jdk.proxy2.$Proxy114.findByEmail(Unknown Source) ~[na:na]
-	at queueless.service.AuthService.login(AuthService.java:50) ~[classes/:na]
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.20.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-[EMERGENCY] Hardcoded admin bypass triggered!
-Hibernate: select count(*) from users u1_0
-Hibernate: select count(*) from users u1_0
-Processing Auth Action: logout | Body: null
-Processing Auth Action: register | Body: {name=Final Test, email=admidn@test.com, password=admidn@test.com, role=customer}
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Processing Auth Action: login | Body: {email=admidn@test.com, password=admidn@test.com}
-[EMERGENCY DEBUG] AuthService.login for: [admidn@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant queueless.model.Role.customer
-	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
-	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
-	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
-	at jdk.proxy2/jdk.proxy2.$Proxy114.findByEmail(Unknown Source)
-	at queueless.service.AuthService.login(AuthService.java:50)
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.lang.IllegalArgumentException: No enum constant queueless.model.Role.customer
-	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:239)
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:107)
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:33)
-	at org.hibernate.dialect.MySQLEnumJdbcType$2.doExtract(MySQLEnumJdbcType.java:76)
-	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44)
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302)
-	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119)
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52)
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59)
-	at org.hibernate.sql.results.graph.DomainResultAssembler.assemble(DomainResultAssembler.java:33)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.extractConcreteTypeStateValues(AbstractEntityInitializer.java:1081)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntityInstance(AbstractEntityInitializer.java:838)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntity(AbstractEntityInitializer.java:813)
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeInstance(AbstractEntityInitializer.java:799)
-	at org.hibernate.sql.results.internal.InitializersList.initializeInstance(InitializersList.java:70)
-	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:109)
-	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86)
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:203)
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303)
-	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509)
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:564)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	... 57 more
-2026-05-02T00:53:48.202+01:00 ERROR 18660 --- [nio-8081-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant queueless.model.Role.customer] with root cause
-
-java.lang.IllegalArgumentException: No enum constant queueless.model.Role.customer
-	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[na:na]
-	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:239) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:107) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.dialect.MySQLEnumJdbcType$2.doExtract(MySQLEnumJdbcType.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.type.descriptor.jdbc.BasicExtractor.extract(BasicExtractor.java:44) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.getCurrentRowValue(JdbcValuesResultSetImpl.java:302) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.getJdbcValue(RowProcessingStateStandardImpl.java:119) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.extractRawValue(BasicResultAssembler.java:52) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.basic.BasicResultAssembler.assemble(BasicResultAssembler.java:59) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.DomainResultAssembler.assemble(DomainResultAssembler.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.extractConcreteTypeStateValues(AbstractEntityInitializer.java:1081) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntityInstance(AbstractEntityInitializer.java:838) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeEntity(AbstractEntityInitializer.java:813) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.graph.entity.AbstractEntityInitializer.initializeInstance(AbstractEntityInitializer.java:799) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.InitializersList.initializeInstance(InitializersList.java:70) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:109) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:86) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:203) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:564) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-3.2.5.jar:3.2.5]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
-	at jdk.proxy2/jdk.proxy2.$Proxy114.findByEmail(Unknown Source) ~[na:na]
-	at queueless.service.AuthService.login(AuthService.java:50) ~[classes/:na]
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.20.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-=== QUEUELESS STARTUP 2026-05-02T00:56:02.492786400 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T00:56:04.779+01:00  INFO 23164 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 23164 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T00:56:04.784+01:00  INFO 23164 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T00:56:07.279+01:00  INFO 23164 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T00:56:07.473+01:00  INFO 23164 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 167 ms. Found 4 JPA repository interfaces.
-2026-05-02T00:56:09.746+01:00  INFO 23164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T00:56:09.787+01:00  INFO 23164 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T00:56:09.792+01:00  INFO 23164 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T00:56:10.040+01:00  INFO 23164 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T00:56:10.044+01:00  INFO 23164 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5077 ms
-2026-05-02T00:56:10.493+01:00  INFO 23164 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T00:56:10.756+01:00  INFO 23164 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T00:56:10.873+01:00  INFO 23164 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T00:56:11.839+01:00  INFO 23164 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T00:56:11.923+01:00  INFO 23164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T00:56:12.559+01:00  INFO 23164 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@267ff4df
-2026-05-02T00:56:12.567+01:00  INFO 23164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T00:56:12.763+01:00  WARN 23164 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T00:56:15.573+01:00  INFO 23164 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T00:56:15.810+01:00  INFO 23164 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@2aac87ab
-2026-05-02T00:56:16.886+01:00  INFO 23164 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T00:56:17.696+01:00  INFO 23164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T00:56:17.716+01:00  INFO 23164 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 14.485 seconds (process running for 15.632)
-2026-05-02T00:58:26.473+01:00  INFO 23164 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T00:58:26.473+01:00  INFO 23164 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T00:58:26.477+01:00  INFO 23164 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-Processing Auth Action: login | Body: {email=user@test.com, password=user}
-[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
-[EMERGENCY] Hardcoded user bypass triggered!
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=business@test.com, password=business}
-[EMERGENCY DEBUG] AuthService.login for: [business@test.com]
-[EMERGENCY] Hardcoded business bypass triggered!
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-[EMERGENCY] Hardcoded admin bypass triggered!
-Hibernate: select count(*) from users u1_0
-=== QUEUELESS STARTUP 2026-05-02T01:02:04.241795600 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T01:02:06.160+01:00  INFO 21908 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 21908 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T01:02:06.166+01:00  INFO 21908 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T01:02:07.961+01:00  INFO 21908 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T01:02:08.156+01:00  INFO 21908 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 170 ms. Found 4 JPA repository interfaces.
-2026-05-02T01:02:09.559+01:00  INFO 21908 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T01:02:09.614+01:00  INFO 21908 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T01:02:09.614+01:00  INFO 21908 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T01:02:09.850+01:00  INFO 21908 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T01:02:09.860+01:00  INFO 21908 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3576 ms
-2026-05-02T01:02:10.355+01:00  INFO 21908 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T01:02:10.553+01:00  INFO 21908 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T01:02:10.644+01:00  INFO 21908 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T01:02:11.325+01:00  INFO 21908 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T01:02:11.393+01:00  INFO 21908 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T01:02:11.868+01:00  INFO 21908 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c07add6
-2026-05-02T01:02:11.873+01:00  INFO 21908 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T01:02:12.045+01:00  WARN 21908 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T01:02:14.623+01:00  INFO 21908 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T01:02:14.832+01:00  INFO 21908 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@72c5064f
-2026-05-02T01:02:16.081+01:00  INFO 21908 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T01:02:16.818+01:00  INFO 21908 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T01:02:16.831+01:00  INFO 21908 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 11.735 seconds (process running for 13.224)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Seeding mock businesses...
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-[DataSeeder] Seed complete!
-2026-05-02T01:03:29.024+01:00  INFO 21908 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T01:03:29.024+01:00  INFO 21908 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T01:03:29.024+01:00  INFO 21908 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-=== QUEUELESS STARTUP 2026-05-02T01:05:35.563393800 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T01:05:37.314+01:00  INFO 4160 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 4160 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T01:05:37.327+01:00  INFO 4160 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T01:05:38.983+01:00  INFO 4160 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T01:05:39.160+01:00  INFO 4160 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 4 JPA repository interfaces.
-2026-05-02T01:05:40.544+01:00  INFO 4160 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T01:05:40.575+01:00  INFO 4160 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T01:05:40.575+01:00  INFO 4160 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T01:05:40.818+01:00  INFO 4160 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T01:05:40.821+01:00  INFO 4160 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3373 ms
-2026-05-02T01:05:41.285+01:00  INFO 4160 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T01:05:41.494+01:00  INFO 4160 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T01:05:41.626+01:00  INFO 4160 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T01:05:42.336+01:00  INFO 4160 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T01:05:42.412+01:00  INFO 4160 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T01:05:42.936+01:00  INFO 4160 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d969330
-2026-05-02T01:05:42.945+01:00  INFO 4160 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T01:05:43.095+01:00  WARN 4160 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T01:05:46.010+01:00  INFO 4160 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T01:05:46.209+01:00  INFO 4160 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@7533923b
-2026-05-02T01:05:47.199+01:00  INFO 4160 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T01:05:47.954+01:00  INFO 4160 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T01:05:47.969+01:00  INFO 4160 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 11.71 seconds (process running for 13.097)
+2026-05-14T17:27:07.185+01:00  INFO 19580 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 19580 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in C:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
+2026-05-14T17:27:07.189+01:00  INFO 19580 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T17:27:08.063+01:00  INFO 19580 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T17:27:08.162+01:00  INFO 19580 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2026-05-14T17:27:08.921+01:00  INFO 19580 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-14T17:27:08.939+01:00  INFO 19580 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T17:27:08.939+01:00  INFO 19580 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-14T17:27:09.027+01:00  INFO 19580 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-14T17:27:09.027+01:00  INFO 19580 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1781 ms
+2026-05-14T17:27:09.264+01:00  INFO 19580 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T17:27:09.412+01:00  INFO 19580 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-14T17:27:09.466+01:00  INFO 19580 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T17:27:09.904+01:00  INFO 19580 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T17:27:09.948+01:00  INFO 19580 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T17:27:10.343+01:00  INFO 19580 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24691c5
+2026-05-14T17:27:10.347+01:00  INFO 19580 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T17:27:10.449+01:00  WARN 19580 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-14T17:27:11.808+01:00  INFO 19580 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T17:27:11.984+01:00  INFO 19580 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+LegacyApiController PostConstruct: authService = queueless.service.AuthService@42ac309
+2026-05-14T17:27:12.540+01:00  INFO 19580 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-05-14T17:27:12.953+01:00  INFO 19580 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-05-14T17:27:12.964+01:00  INFO 19580 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 6.324 seconds (process running for 6.889)
 Hibernate: select count(*) from businesses b1_0
 [DataSeeder] Data already exists, skipping...
-2026-05-02T01:06:34.045+01:00  INFO 4160 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T01:06:34.045+01:00  INFO 4160 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T01:06:34.045+01:00  INFO 4160 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=business@test.com, password=business}
-[EMERGENCY DEBUG] AuthService.login for: [business@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-=== QUEUELESS STARTUP 2026-05-02T01:08:17.668240300 ===
+=== QUEUELESS STARTUP 2026-05-14T17:30:25.510264100 ===
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -689,551 +43,100 @@ Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2026-05-02T01:08:19.150+01:00  INFO 23936 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 23936 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T01:08:19.152+01:00  INFO 23936 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T01:08:20.695+01:00  INFO 23936 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T01:08:20.836+01:00  INFO 23936 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 4 JPA repository interfaces.
-2026-05-02T01:08:21.935+01:00  INFO 23936 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T01:08:21.962+01:00  INFO 23936 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T01:08:21.965+01:00  INFO 23936 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T01:08:22.083+01:00  INFO 23936 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T01:08:22.083+01:00  INFO 23936 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2843 ms
-2026-05-02T01:08:22.394+01:00  INFO 23936 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T01:08:22.530+01:00  INFO 23936 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T01:08:22.597+01:00  INFO 23936 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T01:08:23.153+01:00  INFO 23936 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T01:08:23.217+01:00  INFO 23936 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T01:08:23.568+01:00  INFO 23936 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2094bf3d
-2026-05-02T01:08:23.568+01:00  INFO 23936 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T01:08:23.722+01:00  WARN 23936 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T01:08:26.313+01:00  INFO 23936 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T01:08:26.595+01:00  INFO 23936 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T17:30:26.222+01:00  INFO 10328 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 10328 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in C:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
+2026-05-14T17:30:26.225+01:00  INFO 10328 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T17:30:27.052+01:00  INFO 10328 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T17:30:27.144+01:00  INFO 10328 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+2026-05-14T17:30:27.850+01:00  INFO 10328 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-14T17:30:27.866+01:00  INFO 10328 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T17:30:27.866+01:00  INFO 10328 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-14T17:30:27.952+01:00  INFO 10328 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-14T17:30:27.952+01:00  INFO 10328 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1673 ms
+2026-05-14T17:30:28.140+01:00  INFO 10328 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T17:30:28.226+01:00  INFO 10328 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-14T17:30:28.287+01:00  INFO 10328 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T17:30:28.635+01:00  INFO 10328 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T17:30:28.676+01:00  INFO 10328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T17:30:28.944+01:00  INFO 10328 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e8598d9
+2026-05-14T17:30:28.948+01:00  INFO 10328 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T17:30:29.019+01:00  WARN 10328 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-14T17:30:30.443+01:00  INFO 10328 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T17:30:30.561+01:00  INFO 10328 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 LegacyApiController PostConstruct: authService = queueless.service.AuthService@758311ed
-2026-05-02T01:08:27.742+01:00  INFO 23936 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T01:08:28.369+01:00  INFO 23936 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T01:08:28.384+01:00  INFO 23936 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 10.255 seconds (process running for 11.237)
+2026-05-14T17:30:31.098+01:00  INFO 10328 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-05-14T17:30:31.484+01:00  INFO 10328 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-05-14T17:30:31.493+01:00  INFO 10328 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 5.735 seconds (process running for 6.183)
 Hibernate: select count(*) from businesses b1_0
 [DataSeeder] Data already exists, skipping...
-2026-05-02T01:09:29.684+01:00  INFO 23936 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T01:09:29.684+01:00  INFO 23936 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T01:09:29.692+01:00  INFO 23936 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-14T17:31:13.304+01:00  INFO 10328 --- [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T17:31:13.304+01:00  INFO 10328 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T17:31:13.308+01:00  INFO 10328 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
+[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+Hibernate: select count(*) from users u1_0
+Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
+Hibernate: select count(*) from businesses b1_0
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
+Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
 Processing Auth Action: logout | Body: null
 Processing Auth Action: login | Body: {email=business@test.com, password=business}
 [EMERGENCY DEBUG] AuthService.login for: [business@test.com]
 Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
 Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
 Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0 where b1_0.user_id=?
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=user@test.com, password=user}
-[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-=== QUEUELESS STARTUP 2026-05-02T01:14:16.168150 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T01:14:18.758+01:00  INFO 12848 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 12848 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T01:14:18.763+01:00  INFO 12848 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T01:14:21.349+01:00  INFO 12848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T01:14:21.624+01:00  INFO 12848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 242 ms. Found 4 JPA repository interfaces.
-2026-05-02T01:14:23.734+01:00  INFO 12848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T01:14:23.777+01:00  INFO 12848 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T01:14:23.778+01:00  INFO 12848 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T01:14:24.003+01:00  INFO 12848 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T01:14:24.003+01:00  INFO 12848 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5073 ms
-2026-05-02T01:14:24.605+01:00  INFO 12848 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T01:14:24.898+01:00  INFO 12848 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T01:14:25.003+01:00  INFO 12848 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T01:14:25.853+01:00  INFO 12848 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T01:14:25.929+01:00  INFO 12848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T01:14:26.354+01:00  INFO 12848 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cdbe5ec
-2026-05-02T01:14:26.360+01:00  INFO 12848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T01:14:26.478+01:00  WARN 12848 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T01:14:28.997+01:00  INFO 12848 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T01:14:29.213+01:00  INFO 12848 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@3911fec8
-2026-05-02T01:14:30.393+01:00  INFO 12848 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T01:14:31.469+01:00  INFO 12848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T01:14:31.488+01:00  INFO 12848 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 14.498 seconds (process running for 15.748)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-2026-05-02T01:15:02.915+01:00  INFO 12848 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T01:15:02.917+01:00  INFO 12848 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T01:15:02.924+01:00  INFO 12848 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=user@test.com, password=user}
-[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: select count(*) from users u1_0
-=== QUEUELESS STARTUP 2026-05-02T01:20:40.152868 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T01:20:42.206+01:00  INFO 4740 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 4740 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T01:20:42.210+01:00  INFO 4740 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T01:20:44.225+01:00  INFO 4740 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T01:20:44.442+01:00  INFO 4740 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 4 JPA repository interfaces.
-2026-05-02T01:20:45.975+01:00  INFO 4740 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T01:20:46.012+01:00  INFO 4740 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T01:20:46.012+01:00  INFO 4740 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T01:20:46.160+01:00  INFO 4740 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T01:20:46.160+01:00  INFO 4740 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3814 ms
-2026-05-02T01:20:46.574+01:00  INFO 4740 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T01:20:46.728+01:00  INFO 4740 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T01:20:46.837+01:00  INFO 4740 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T01:20:47.510+01:00  INFO 4740 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T01:20:47.598+01:00  INFO 4740 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T01:20:48.025+01:00  INFO 4740 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6eda012b
-2026-05-02T01:20:48.030+01:00  INFO 4740 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T01:20:48.175+01:00  WARN 4740 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T01:20:51.022+01:00  INFO 4740 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T01:20:51.252+01:00  INFO 4740 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@4840ec68
-2026-05-02T01:20:52.202+01:00  INFO 4740 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T01:20:52.952+01:00  INFO 4740 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T01:20:52.968+01:00  INFO 4740 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 12.013 seconds (process running for 13.188)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Seeding mock businesses...
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-[DataSeeder] Seed complete!
-2026-05-02T01:21:21.742+01:00  INFO 4740 --- [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T01:21:21.742+01:00  INFO 4740 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T01:21:21.742+01:00  INFO 4740 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=user@test.com, password=user}
-[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-2026-05-02T03:22:15.667+01:00  WARN 4740 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h27s536ms390µs400ns).
-2026-05-02T09:39:53.609+01:00  WARN 4740 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h17m11s106ms660µs300ns).
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: select count(*) from users u1_0
-=== QUEUELESS STARTUP 2026-05-02T09:59:56.646610300 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T09:59:58.541+01:00  INFO 6164 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 6164 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T09:59:58.546+01:00  INFO 6164 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T10:00:00.422+01:00  INFO 6164 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T10:00:00.636+01:00  INFO 6164 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 183 ms. Found 4 JPA repository interfaces.
-2026-05-02T10:00:02.625+01:00  INFO 6164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T10:00:02.663+01:00  INFO 6164 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T10:00:02.664+01:00  INFO 6164 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T10:00:02.852+01:00  INFO 6164 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T10:00:02.854+01:00  INFO 6164 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4176 ms
-2026-05-02T10:00:03.289+01:00  INFO 6164 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T10:00:03.542+01:00  INFO 6164 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T10:00:03.706+01:00  INFO 6164 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T10:00:04.710+01:00  INFO 6164 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T10:00:04.799+01:00  INFO 6164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T10:00:05.387+01:00  INFO 6164 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@307c59ea
-2026-05-02T10:00:05.391+01:00  INFO 6164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T10:00:05.592+01:00  WARN 6164 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T10:00:08.493+01:00  INFO 6164 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T10:00:08.824+01:00  INFO 6164 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@7a13ad55
-2026-05-02T10:00:11.094+01:00  INFO 6164 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T10:00:12.190+01:00  INFO 6164 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T10:00:12.210+01:00  INFO 6164 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 14.9 seconds (process running for 16.017)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-2026-05-02T10:01:09.255+01:00  INFO 6164 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T10:01:09.260+01:00  INFO 6164 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T10:01:09.265+01:00  INFO 6164 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-Processing Auth Action: login | Body: {email=admin@queueless.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@queueless.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-queueless.exception.AuthException: Identifiants incorrects.
-	at queueless.service.AuthService.lambda$login$3(AuthService.java:57)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at queueless.service.AuthService.login(AuthService.java:57)
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Processing Auth Action: login | Body: {email=admin@example.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@example.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-queueless.exception.AuthException: Identifiants incorrects.
-	at queueless.service.AuthService.lambda$login$3(AuthService.java:57)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at queueless.service.AuthService.login(AuthService.java:57)
-	at queueless.controller.LegacyApiController.handleAuth(LegacyApiController.java:51)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: select count(*) from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from queues q1_0
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select count(*) from queues q1_0
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select count(*) from queues q1_0
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select count(*) from queues q1_0
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select count(*) from queues q1_0
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select count(*) from queues q1_0
-=== QUEUELESS STARTUP 2026-05-02T10:09:49.612245900 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T10:09:51.455+01:00  INFO 264 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 264 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T10:09:51.460+01:00  INFO 264 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T10:09:53.478+01:00  INFO 264 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T10:09:53.682+01:00  INFO 264 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 4 JPA repository interfaces.
-2026-05-02T10:09:55.304+01:00  INFO 264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T10:09:55.343+01:00  INFO 264 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T10:09:55.344+01:00  INFO 264 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T10:09:55.525+01:00  INFO 264 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T10:09:55.527+01:00  INFO 264 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3878 ms
-2026-05-02T10:09:56.000+01:00  INFO 264 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T10:09:56.208+01:00  INFO 264 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T10:09:56.315+01:00  INFO 264 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T10:09:57.112+01:00  INFO 264 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T10:09:57.213+01:00  INFO 264 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T10:09:57.843+01:00  INFO 264 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@687eb455
-2026-05-02T10:09:57.857+01:00  INFO 264 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T10:09:58.146+01:00  WARN 264 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T10:10:02.890+01:00  INFO 264 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T10:10:03.210+01:00  INFO 264 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@608c2042
-2026-05-02T10:10:04.739+01:00  INFO 264 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T10:10:05.989+01:00  INFO 264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T10:10:06.007+01:00  INFO 264 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 15.606 seconds (process running for 16.853)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-2026-05-02T10:10:54.000+01:00  INFO 264 --- [nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T10:10:54.001+01:00  INFO 264 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T10:10:54.009+01:00  INFO 264 --- [nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-=== QUEUELESS STARTUP 2026-05-02T10:13:44.429649500 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T10:13:46.284+01:00  INFO 10244 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 10244 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T10:13:46.292+01:00  INFO 10244 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T10:13:49.119+01:00  INFO 10244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T10:13:49.341+01:00  INFO 10244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196 ms. Found 4 JPA repository interfaces.
-2026-05-02T10:13:50.875+01:00  INFO 10244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T10:13:50.912+01:00  INFO 10244 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T10:13:50.912+01:00  INFO 10244 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T10:13:51.109+01:00  INFO 10244 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T10:13:51.112+01:00  INFO 10244 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4617 ms
-2026-05-02T10:13:51.628+01:00  INFO 10244 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T10:13:51.841+01:00  INFO 10244 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T10:13:51.962+01:00  INFO 10244 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T10:13:52.900+01:00  INFO 10244 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T10:13:52.991+01:00  INFO 10244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T10:13:53.704+01:00  INFO 10244 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a2546d6
-2026-05-02T10:13:53.711+01:00  INFO 10244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T10:13:53.986+01:00  WARN 10244 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T10:13:56.795+01:00  INFO 10244 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T10:13:57.069+01:00  INFO 10244 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@22c0344e
-2026-05-02T10:13:58.244+01:00  INFO 10244 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T10:13:59.471+01:00  INFO 10244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T10:13:59.492+01:00  INFO 10244 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 14.357 seconds (process running for 15.548)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Seeding mock businesses...
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: insert into users (created_at,email,name,password,role) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into businesses (created_at,location,name,user_id,service_type) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-Hibernate: insert into queues (is_active,avg_service_time,business_id,created_at,service_name) values (?,?,?,?,?)
-[DataSeeder] Seed complete!
-2026-05-02T10:14:38.124+01:00  INFO 10244 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T10:14:38.125+01:00  INFO 10244 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T10:14:38.131+01:00  INFO 10244 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=admin@test.com, password=admin}
-[EMERGENCY DEBUG] AuthService.login for: [admin@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-Hibernate: select count(*) from users u1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-Hibernate: select count(*) from users u1_0
-Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0
-Hibernate: select count(*) from businesses b1_0
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
-Processing Auth Action: logout | Body: null
-Processing Auth Action: login | Body: {email=user@test.com, password=user}
-[EMERGENCY DEBUG] AuthService.login for: [user@test.com]
-Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
-=== QUEUELESS STARTUP 2026-05-02T10:19:27.194581600 ===
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.5)
-
-2026-05-02T10:19:30.914+01:00  INFO 17276 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 17276 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in c:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
-2026-05-02T10:19:30.926+01:00  INFO 17276 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-05-02T10:19:34.013+01:00  INFO 17276 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-02T10:19:34.232+01:00  INFO 17276 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 4 JPA repository interfaces.
-2026-05-02T10:19:35.643+01:00  INFO 17276 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-05-02T10:19:35.678+01:00  INFO 17276 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-02T10:19:35.679+01:00  INFO 17276 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-05-02T10:19:35.848+01:00  INFO 17276 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-02T10:19:35.850+01:00  INFO 17276 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4569 ms
-2026-05-02T10:19:36.261+01:00  INFO 17276 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-02T10:19:36.459+01:00  INFO 17276 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-05-02T10:19:36.583+01:00  INFO 17276 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-02T10:19:37.320+01:00  INFO 17276 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-02T10:19:37.392+01:00  INFO 17276 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-02T10:19:37.852+01:00  INFO 17276 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57e03347
-2026-05-02T10:19:37.858+01:00  INFO 17276 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-02T10:19:38.039+01:00  WARN 17276 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-02T10:19:41.289+01:00  INFO 17276 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-02T10:19:41.685+01:00  INFO 17276 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-LegacyApiController PostConstruct: authService = queueless.service.AuthService@6dbdeb69
-2026-05-02T10:19:43.099+01:00  INFO 17276 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-02T10:19:44.411+01:00  INFO 17276 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-05-02T10:19:44.428+01:00  INFO 17276 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 16.183 seconds (process running for 17.807)
-Hibernate: select count(*) from businesses b1_0
-[DataSeeder] Data already exists, skipping...
-2026-05-02T10:20:29.059+01:00  INFO 17276 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-02T10:20:29.060+01:00  INFO 17276 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-02T10:20:29.063+01:00  INFO 17276 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 Processing Auth Action: logout | Body: null
 Processing Auth Action: login | Body: {email=user@test.com, password=user}
 [EMERGENCY DEBUG] AuthService.login for: [user@test.com]
 Hibernate: select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
 Hibernate: select b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type from businesses b1_0
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
+Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
 Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
 Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
 Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,q1_0.created_at,q1_0.service_name from queues q1_0 where q1_0.business_id=?
 Hibernate: select q1_0.id,q1_0.is_active,q1_0.avg_service_time,q1_0.business_id,b1_0.id,b1_0.created_at,b1_0.location,b1_0.name,b1_0.user_id,b1_0.service_type,q1_0.created_at,q1_0.service_name from queues q1_0 join businesses b1_0 on b1_0.id=q1_0.business_id where q1_0.id=?
 Hibernate: select qe1_0.id,qe1_0.created_at,qe1_0.join_time,qe1_0.position,qe1_0.queue_id,qe1_0.status,qe1_0.user_id from queue_entries qe1_0 where qe1_0.queue_id=?
 Hibernate: insert into queue_entries (created_at,join_time,position,queue_id,status,user_id) values (?,?,?,?,?,?)
+=== QUEUELESS STARTUP 2026-05-14T18:14:20.427276 ===
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-05-14T18:14:22.159+01:00  INFO 18924 --- [           main] queueless.QueueLessApplication           : Starting QueueLessApplication using Java 21.0.6 with PID 18924 (C:\Users\dhiam\Projet PHP-JS\QueueLess-Java\target\classes started by dhiam in C:\Users\dhiam\Projet PHP-JS\QueueLess-Java)
+2026-05-14T18:14:22.162+01:00  INFO 18924 --- [           main] queueless.QueueLessApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T18:14:23.970+01:00  INFO 18924 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T18:14:24.148+01:00  INFO 18924 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153 ms. Found 4 JPA repository interfaces.
+2026-05-14T18:14:25.740+01:00  INFO 18924 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-14T18:14:25.775+01:00  INFO 18924 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T18:14:25.776+01:00  INFO 18924 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-14T18:14:25.945+01:00  INFO 18924 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-14T18:14:25.948+01:00  INFO 18924 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3681 ms
+2026-05-14T18:14:26.477+01:00  INFO 18924 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T18:14:26.739+01:00  INFO 18924 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-14T18:14:26.858+01:00  INFO 18924 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T18:14:27.666+01:00  INFO 18924 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T18:14:27.752+01:00  INFO 18924 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T18:14:28.574+01:00  INFO 18924 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c8f4bc7
+2026-05-14T18:14:28.582+01:00  INFO 18924 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T18:14:28.774+01:00  WARN 18924 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-14T18:14:31.549+01:00  INFO 18924 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T18:14:31.781+01:00  INFO 18924 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+LegacyApiController PostConstruct: authService = queueless.service.AuthService@571c7572
+2026-05-14T18:14:33.277+01:00  INFO 18924 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-05-14T18:14:34.208+01:00  INFO 18924 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-05-14T18:14:34.223+01:00  INFO 18924 --- [           main] queueless.QueueLessApplication           : Started QueueLessApplication in 13.051 seconds (process running for 14.161)
+Hibernate: select count(*) from businesses b1_0
+[DataSeeder] Data already exists, skipping...
+2026-05-14T18:14:37.343+01:00  INFO 18924 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T18:14:37.343+01:00  INFO 18924 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T18:14:37.345+01:00  INFO 18924 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

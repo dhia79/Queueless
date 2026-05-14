@@ -89,9 +89,18 @@ public class LegacyApiController {
 
     // ── user_queue.php ────────────────────────────────────────────────────
     @RequestMapping(value = "/user_queue.php", method = {RequestMethod.GET, RequestMethod.POST})
-    public ResponseEntity<?> handleUserQueue(@RequestParam(name = "action") String action, @RequestBody(required = false) Map<String, Object> body, @RequestParam(name = "queueId", required = false) Integer queryQueueId, HttpSession session) {
+    public ResponseEntity<?> handleUserQueue(@RequestParam(name = "action") String action, 
+                                            @RequestBody(required = false) Map<String, Object> body, 
+                                            @RequestParam(name = "queueId", required = false) Integer queryQueueId, 
+                                            @RequestParam(name = "queue_id", required = false) Integer queryQueueIdUnderscore,
+                                            HttpSession session) {
         User user = (User) session.getAttribute("user");
         if (user == null) return ResponseEntity.status(401).build();
+
+        Integer qId = queryQueueId != null ? queryQueueId : queryQueueIdUnderscore;
+        if (qId == null && body != null && body.containsKey("queue_id")) {
+            qId = Integer.parseInt(body.get("queue_id").toString());
+        }
 
         try {
             switch (action) {
@@ -101,14 +110,17 @@ public class LegacyApiController {
                 case "list_queues":
                     return ResponseEntity.ok(Map.of("status", "success", "queues", userQueueService.listActiveQueues()));
                 case "join":
-                    Integer qId = queryQueueId;
-                    if (qId == null && body != null && body.containsKey("queue_id")) {
-                        qId = Integer.parseInt(body.get("queue_id").toString());
-                    }
                     if (qId == null) throw new QueuelessException("Queue ID manquant");
                     return ResponseEntity.ok(Map.of("status", "success", "entry", userQueueService.joinQueue(user, qId)));
+                case "status":
+                    if (qId == null) throw new QueuelessException("Queue ID manquant");
+                    return ResponseEntity.ok(userQueueService.getQueueStatus(user, qId));
+                case "leave":
+                    if (qId == null) throw new QueuelessException("Queue ID manquant");
+                    userQueueService.leaveQueue(user, qId);
+                    return ResponseEntity.ok(Map.of("status", "success"));
                 default:
-                    return ResponseEntity.badRequest().body("Action inconnue");
+                    return ResponseEntity.badRequest().body("Action inconnue: " + action);
             }
         } catch (QueuelessException e) {
             return ResponseEntity.status(400).body(Map.of("status", "error", "message", e.getMessage()));
