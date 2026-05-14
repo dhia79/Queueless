@@ -29,8 +29,13 @@ Utilisation intensive de l'API **Collections** (notamment `java.util.List` et `j
 - **Modèle Repository** : Encapsulation de la logique SQL/JPA derrière des dépôts (`UserRepository`, `BusinessRepository`).
 - **JDBC / JPA** : Utilisation de JDBC pour la connexion initiale à MySQL, puis migration vers **Spring Data JPA** pour automatiser le mapping objet-relationnel (ORM) tout en respectant les principes de la couche Repository.
 
+## 8. Architecture REST (Controllers)
+- **Découpage Modulaire** : Remplacement de l'ancien contrôleur monolithique (`LegacyApiController`) par des contrôleurs spécifiques (`AuthController`, `UserQueueController`, `BusinessQueueController`, `AdminController`).
+- **Spring Web** : Utilisation des annotations `@RestController`, `@GetMapping`, `@PostMapping` pour définir des points d'accès clairs et standardisés pour l'application frontend.
+
 ---
 **Structure de fichiers clés :**
+- `queueless.controller` : Points d'entrée de l'API REST (Endpoints).
 - `queueless.model` : Contient les classes (POO, Getters, Setters, Enums).
 - `queueless.repository` : Interfaces et logique d'accès à la DB.
 - `queueless.service` : Logique métier (AuthService, BusinessService).

@@ -28,7 +28,10 @@ public class BusinessQueueController {
         if (user == null || user.getRole() != Role.BUSINESS) return ResponseEntity.status(403).build();
 
         Optional<Business> bizProfile = businessService.getProfile(user);
-        return ResponseEntity.ok(Map.of("status", "success", "business", bizProfile.orElse(null)));
+        Map<String, Object> response = new java.util.HashMap<>();
+        response.put("status", "success");
+        response.put("business", bizProfile.orElse(null));
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/profile")
