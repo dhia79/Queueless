@@ -219,7 +219,7 @@
 
         async function loadStats() {
             try {
-                const res = await apiCall('stats', 'GET', null, 'admin.php');
+                const res = await apiCall('admin/stats', 'GET');
                 if (res.status === 'success') {
                     const s = res.stats;
                     document.getElementById('stats-grid').innerHTML = `
@@ -244,7 +244,7 @@
 
         async function loadBusinesses() {
             try {
-                const res = await apiCall('businesses', 'GET', null, 'admin.php');
+                const res = await apiCall('admin/businesses', 'GET');
                 if (res.status === 'success') {
                     const tbody = document.getElementById('businesses-table');
                     if (res.businesses.length === 0) {
@@ -283,7 +283,7 @@
 
         async function loadCustomers() {
             try {
-                const res = await apiCall('customers', 'GET', null, 'admin.php');
+                const res = await apiCall('admin/customers', 'GET');
                 if (res.status === 'success') {
                     const tbody = document.getElementById('customers-table');
                     if (res.customers.length === 0) {
@@ -319,7 +319,7 @@
             if (!confirm(warning)) return;
 
             try {
-                const res = await apiCall('delete_user', 'POST', { id }, 'admin.php');
+                const res = await apiCall('admin/delete_user', 'POST', { id });
                 if (res.status === 'success') {
                     loadStats();
                     if (type === 'business') loadBusinesses();
@@ -338,7 +338,7 @@
             btn.disabled = true;
 
             try {
-                const res = await fetch('api/seed.php');
+                const res = await fetch('api/utils/seed');
                 const data = await res.json();
 
                 if (data.status === 'success') {
@@ -420,7 +420,7 @@
             const action = id ? 'update_user' : 'add_user';
 
             try {
-                const res = await apiCall(action, 'POST', data, 'admin.php');
+                const res = await apiCall('admin/' + action, 'POST', data);
                 if (res.status === 'success') {
                     closeUserModal();
                     loadStats();

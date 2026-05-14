@@ -229,26 +229,25 @@ class DebugConsole {
         }
 
         try {
-            const res = await apiCall('probe', 'GET', null, 'probe.php');
+            const res = await apiCall('utils/probe', 'GET');
             if (res.status === 'success') {
                 const d = res.diagnostics;
                 document.getElementById('debug-content').innerHTML = `
-                    <h4 style="margin-bottom: 12px; color: #38bdf8;">Server Info</h4>
-                    <div class="stat-row"><span class="stat-label">PHP Version:</span><span class="stat-value">${d.php_version}</span></div>
-                    <div class="stat-row"><span class="stat-label">Software:</span><span class="stat-value" style="font-size:10px">${d.server_software}</span></div>
-                    <div class="stat-row"><span class="stat-label">DB Contact:</span><span class="stat-value">${d.db_status}</span></div>
-                    <div class="stat-row"><span class="stat-label">Server Time:</span><span class="stat-value" style="font-size:10px">${d.time_server}</span></div>
+                    <h4 style="margin-bottom: 12px; color: #38bdf8;">Server Info (Spring Boot)</h4>
+                    <div class="stat-row"><span class="stat-label">Java Version:</span><span class="stat-value">${d.java_version}</span></div>
+                    <div class="stat-row"><span class="stat-label">OS:</span><span class="stat-value" style="font-size:10px">${d.os_name}</span></div>
+                    <div class="stat-row"><span class="stat-label">DB Status:</span><span class="stat-value">${d.db_status}</span></div>
+                    <div class="stat-row"><span class="stat-label">Server Time:</span><span class="stat-value" style="font-size:10px">${d.server_time}</span></div>
                     
-                    <h4 style="margin: 20px 0 12px; color: #38bdf8;">Extensions</h4>
-                    <div class="stat-row"><span class="stat-label">PDO / MySQL:</span><span class="stat-value">${d.extensions.pdo ? '✓' : '✗'} / ${d.extensions.pdo_mysql ? '✓' : '✗'}</span></div>
-                    <div class="stat-row"><span class="stat-label">Session:</span><span class="stat-value">${d.extensions.session ? '✓' : '✗'}</span></div>
-                    <div class="stat-row"><span class="stat-label">Memory:</span><span class="stat-value">${d.memory_usage}</span></div>
+                    <h4 style="margin: 20px 0 12px; color: #38bdf8;">JVM Memory</h4>
+                    <div class="stat-row"><span class="stat-label">Free:</span><span class="stat-value">${d.memory_free}</span></div>
+                    <div class="stat-row"><span class="stat-label">Total:</span><span class="stat-value">${d.memory_total}</span></div>
                 `;
             } else {
                 document.getElementById('debug-content').innerHTML = `<p style="color:#f87171;">Error: ${res.message}</p>`;
             }
         } catch (e) {
-            document.getElementById('debug-content').innerHTML = `<p style="color:#f87171;">Failed to connect to probe.php</p>`;
+            document.getElementById('debug-content').innerHTML = `<p style="color:#f87171;">Failed to connect to Java API</p>`;
         }
     }
 

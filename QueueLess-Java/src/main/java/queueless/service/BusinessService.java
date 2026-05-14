@@ -26,9 +26,25 @@ public class BusinessService extends BaseService {
     @Override
     public String getServiceName() { return "BusinessService"; }
 
-    public Business getOrCreateProfile(User owner, String name, String location, String serviceType) throws QueuelessException {
+    public Optional<Business> getProfile(User owner) {
         List<Business> existing = businessRepository.findByOwner(owner);
-        if (!existing.isEmpty()) return existing.get(0);
+        return existing.isEmpty() ? Optional.empty() : Optional.of(existing.get(0));
+    }
+
+    public Business getOrCreateProfile(User owner, String name, String location, String serviceType) throws QueuelessException {
+        Optional<Business> profile = getProfile(owner);
+        if (profile.isPresent()) {
+            Business b = profile.get();
+            if (name != null) b.setName(name);
+            if (location != null) b.setLocation(location);
+            if (serviceType != null) b.setServiceType(serviceType);
+            return businessRepository.save(b);
+        }
+        
+        if (name == null || location == null) {
+            throw new QueuelessException("Name and location are required for new profile");
+        }
+        
         return businessRepository.save(new Business(owner, name, location, serviceType));
     }
 
@@ -36,8 +52,34 @@ public class BusinessService extends BaseService {
         return queueRepository.save(new Queue(business, serviceName, avgTime));
     }
 
-    public List<Queue> listQueuesWithEntries(Business business) {
-        return queueRepository.findByBusiness(business);
+    public List<Map<String, Object>> listQueuesWithEntries(Business business) {
+        List<Queue> queues = queueRepository.findByBusiness(business);
+        List<Map<String, Object>> result = new ArrayList<>();
+        
+        for (Queue q : queues) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("id", q.getId());
+            map.put("service_name", q.getServiceName());
+            map.put("avg_service_time", q.getAvgServiceTime());
+            
+            List<QueueEntry> waiting = queueEntryRepository.findByQueueAndStatusOrderByJoinTimeAsc(q, EntryStatus.WAITING);
+            map.put("waiting_count", waiting.size());
+            
+            if (!waiting.isEmpty()) {
+                QueueEntry next = waiting.get(0);
+                Map<String, Object> nextMap = new HashMap<>();
+                nextMap.put("id", next.getId());
+                nextMap.put("position", next.getPosition());
+                nextMap.put("name", next.getUser().getName());
+                nextMap.put("join_time", next.getJoinTime());
+                map.put("next_customer", nextMap);
+            } else {
+                map.put("next_customer", null);
+            }
+            
+            result.add(map);
+        }
+        return result;
     }
 
     public boolean callNext(int queueId) {

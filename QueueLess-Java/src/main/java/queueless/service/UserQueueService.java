@@ -55,10 +55,12 @@ public class UserQueueService extends BaseService {
     }
 
     public java.util.Map<String, Object> getQueueStatus(User user, Integer queueId) throws QueuelessException {
+        System.out.println("[Debug] getQueueStatus for user: " + user.getEmail() + " queue: " + queueId);
         Queue q = queueRepository.findById(queueId).orElseThrow(() -> new QueuelessException("Queue non trouvée"));
         QueueEntry userEntry = queueEntryRepository.findByQueueAndUserAndStatus(q, user, EntryStatus.WAITING)
-                .orElse(queueEntryRepository.findByQueueAndUserAndStatus(q, user, EntryStatus.SERVED)
-                .orElseThrow(() -> new QueuelessException("Aucune entrée active dans cette file")));
+                .or(() -> queueEntryRepository.findByQueueAndUserAndStatus(q, user, EntryStatus.SERVED))
+                .orElseThrow(() -> new QueuelessException("Aucune entrée active dans cette file"));
+        System.out.println("[Debug] Found userEntry: " + userEntry.getId() + " status: " + userEntry.getStatus());
 
         List<QueueEntry> waitingEntries = queueEntryRepository.findByQueueAndStatusOrderByJoinTimeAsc(q, EntryStatus.WAITING);
         

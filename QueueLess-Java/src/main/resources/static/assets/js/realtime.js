@@ -16,7 +16,7 @@ const QueueMonitor = {
 
     async sync(queueId, callback) {
         try {
-            const data = await apiCall('status&queue_id=' + queueId, 'GET', null, 'user_queue.php');
+            const data = await apiCall('user-queue/status', 'GET', { queue_id: queueId });
             callback(data);
         } catch (err) {
             console.error('[Monitor] Sync failed:', err);

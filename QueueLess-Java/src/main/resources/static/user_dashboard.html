@@ -179,7 +179,7 @@
 
         async function loadBusinesses() {
             try {
-                const res = await apiCall('businesses', 'GET', null, 'user_queue.php');
+                const res = await apiCall('user-queue/businesses', 'GET');
                 if (res.status === 'success') {
                     businessesData = res.businesses;
                     filterAndRender();
@@ -251,7 +251,7 @@
             }
 
             try {
-                const res = await apiCall('join', 'POST', { queue_id: queueId }, 'user_queue.php');
+                const res = await apiCall('user-queue/join', 'POST', { queue_id: queueId });
                 if (res.status === 'success') {
                     currentQueueId = queueId;
                     localStorage.setItem('active_queue', queueId);
@@ -273,7 +273,7 @@
             if (!confirm("Are you sure you want to leave the queue?")) return;
 
             try {
-                await apiCall('leave', 'POST', { queue_id: currentQueueId }, 'user_queue.php');
+                await apiCall('user-queue/leave', 'POST', { queue_id: currentQueueId });
                 stopQueuePolling();
                 currentQueueId = null;
                 localStorage.removeItem('active_queue');

@@ -33,14 +33,14 @@ function getAuthUser() {
 
 async function logout() {
     try {
-        await fetch(API_BASE + 'auth.php?action=logout');
+        await fetch(API_BASE + 'auth/logout');
     } catch (e) {}
     localStorage.removeItem('user');
     localStorage.removeItem('active_queue');
     window.location.href = 'login.html';
 }
 
-async function apiCall(action, method = 'GET', body = null, endpoint = 'auth.php') {
+async function apiCall(endpoint, method = 'GET', body = null) {
     const options = {
         method,
         headers: {
@@ -52,19 +52,24 @@ async function apiCall(action, method = 'GET', body = null, endpoint = 'auth.php
         options.body = JSON.stringify(body);
     }
 
-    const url = `${API_BASE}${endpoint}?action=${action}`;
+    // Handle query params for GET requests if body is provided as object
+    let url = `${API_BASE}${endpoint}`;
+    if (method === 'GET' && body) {
+        const params = new URLSearchParams(body).toString();
+        url += `?${params}`;
+    }
     
     try {
         const response = await fetch(url, options);
         if (!response.ok) {
-            if (window.QueueLessDebug) window.QueueLessDebug.addLog(action, 'error', url);
+            if (window.QueueLessDebug) window.QueueLessDebug.addLog(endpoint, 'error', url);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        if (window.QueueLessDebug) window.QueueLessDebug.addLog(action, 'success', url);
+        if (window.QueueLessDebug) window.QueueLessDebug.addLog(endpoint, 'success', url);
         return data;
     } catch (error) {
-        if (window.QueueLessDebug) window.QueueLessDebug.addLog(action, 'error', url);
+        if (window.QueueLessDebug) window.QueueLessDebug.addLog(endpoint, 'error', url);
         console.error('API call failed:', error);
         throw error;
     }

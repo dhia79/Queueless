@@ -143,7 +143,7 @@
         async function init() {
             try {
                 // Check if profile exists
-                const res = await apiCall('profile', 'GET', null, 'business_queue.php');
+                const res = await apiCall('business-queue/profile', 'GET');
                 if (res.status === 'success' && res.business) {
                     document.getElementById('dashboard-section').classList.remove('hidden');
                     loadQueues();
@@ -167,7 +167,7 @@
             const service_type = document.getElementById('b-type').value;
 
             try {
-                const res = await apiCall('create_profile', 'POST', { name, location, service_type }, 'business_queue.php');
+                const res = await apiCall('business-queue/profile', 'POST', { name, location, service_type });
                 if (res.status === 'success') {
                     document.getElementById('setup-section').classList.add('hidden');
                     document.getElementById('dashboard-section').classList.remove('hidden');
@@ -186,7 +186,7 @@
         // Load and Render Queues
         async function loadQueues() {
             try {
-                const res = await apiCall('queues', 'GET', null, 'business_queue.php');
+                const res = await apiCall('business-queue/queues', 'GET');
                 if (res.status === 'success') {
                     renderQueues(res.queues);
                 }
@@ -251,7 +251,7 @@
             const avg_service_time = parseInt(document.getElementById('q-time').value);
 
             try {
-                const res = await apiCall('create_queue', 'POST', { service_name, avg_service_time }, 'business_queue.php');
+                const res = await apiCall('business-queue/create-queue', 'POST', { service_name, avg_service_time });
                 if (res.status === 'success') {
                     document.getElementById('create-queue-modal').classList.add('hidden');
                     document.getElementById('queue-form').reset();
@@ -267,7 +267,7 @@
         // Call Next Customer
         async function callNext(queueId) {
             try {
-                const res = await apiCall('call_next', 'POST', { queue_id: queueId }, 'business_queue.php');
+                const res = await apiCall('business-queue/call-next', 'POST', { queue_id: queueId });
                 if (res.status === 'success') {
                     loadQueues(); // reload UI
                 } else {

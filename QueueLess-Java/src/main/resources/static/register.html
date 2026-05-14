@@ -130,7 +130,7 @@
             const role = document.getElementById('role').value || (urlParams.get('role') === 'business' ? 'business' : 'customer');
 
             try {
-                const res = await apiCall('register', 'POST', { name, email, password, role });
+                const res = await apiCall('auth/register', 'POST', { name, email, password, role });
                 
                 if (res.status === 'success') {
                     successDiv.textContent = 'Account created successfully! Redirecting to login...';

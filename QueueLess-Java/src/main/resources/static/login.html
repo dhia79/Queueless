@@ -108,7 +108,7 @@
             const password = document.getElementById('password').value;
 
             try {
-                const res = await apiCall('login', 'POST', { email, password });
+                const res = await apiCall('auth/login', 'POST', { email, password });
                 
                 if (res.status === 'success') {
                     localStorage.setItem('user', JSON.stringify(res.user));
